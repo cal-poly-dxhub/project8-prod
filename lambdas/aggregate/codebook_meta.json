@@ -1,0 +1,4493 @@
+{
+"100": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 100,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Vomiting, Includes Cyclic",
+"type": "Concept"
+},
+"101": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 101,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Dysmotility (includes slow gastric emptying, neurologic gut, slow motility)",
+"type": "Concept"
+},
+"102": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 102,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Esophagitis",
+"type": "Concept"
+},
+"103": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 103,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Gagging",
+"type": "Concept"
+},
+"104": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 104,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "GI morphology, structure, abnormal",
+"type": "Concept"
+},
+"105": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 105,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Infant Feeding Issues (Includes poor sucking, chewing)",
+"type": "Concept"
+},
+"106": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 106,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Leaky Gut (reduced nutrient absorption)",
+"type": "Concept"
+},
+"107": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 107,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Reflux (Includes GERD)",
+"type": "Concept"
+},
+"108": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 108,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Gastrointestinal, other",
+"type": "Concept"
+},
+"11": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 11,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Aggression",
+"type": "Concept"
+},
+"110": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 110,
+"depth": 2.0,
+"domain": "Genitourinary",
+"name": "Genital system, abnormal\u00a0(includes reproductive system, menses, irregular periods, cryptorchidism, torsion)",
+"type": "Concept"
+},
+"111": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 111,
+"depth": 2.0,
+"domain": "Genitourinary",
+"name": "Genitourinary Infections (Includes pyelonephritis, chronic yeast infections, urinary tract infections (UTIs), recurrent UTIs)",
+"type": "Concept"
+},
+"112": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 112,
+"depth": 2.0,
+"domain": "Genitourinary",
+"name": "Incontinence (includes bed wetting)",
+"type": "Concept"
+},
+"113": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 113,
+"depth": 2.0,
+"domain": "Genitourinary",
+"name": "Renal abnormality (includes kidney stones)",
+"type": "Concept"
+},
+"114": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 114,
+"depth": 2.0,
+"domain": "Genitourinary",
+"name": "Urinary System, Abnormal (includes bladder atonia, abnormal ureters, urine flow obstruction, structural defects)",
+"type": "Concept"
+},
+"116": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 116,
+"depth": 2.0,
+"domain": "Growth",
+"name": "Failure to Thrive",
+"type": "Concept"
+},
+"117": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 117,
+"depth": 2.0,
+"domain": "Growth",
+"name": "Obesity",
+"type": "Concept"
+},
+"118": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 118,
+"depth": 2.0,
+"domain": "Growth",
+"name": "Short stature",
+"type": "Concept"
+},
+"119": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 119,
+"depth": 2.0,
+"domain": "Growth",
+"name": "Tall stature, long limbs",
+"type": "Concept"
+},
+"12": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 12,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Abnormal play",
+"type": "Concept"
+},
+"120": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 120,
+"depth": 2.0,
+"domain": "Growth",
+"name": "Body weight, abnormal (includes overweight, underweight, obesity, weight gain)",
+"type": "Concept"
+},
+"121": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 121,
+"depth": 2.0,
+"domain": "Growth",
+"name": "Underweight",
+"type": "Concept"
+},
+"123": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 123,
+"depth": 2.0,
+"domain": "Hearing",
+"name": "Deafness",
+"type": "Concept"
+},
+"124": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 124,
+"depth": 2.0,
+"domain": "Hearing",
+"name": "Hearing impariment",
+"type": "Concept"
+},
+"125": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 125,
+"depth": 2.0,
+"domain": "Hearing",
+"name": "Hearing test, abnormal",
+"type": "Concept"
+},
+"126": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 126,
+"depth": 2.0,
+"domain": "Hearing",
+"name": "Otitis/Ear Infections",
+"type": "Concept"
+},
+"128": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 128,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Apraxia (including of speech)",
+"type": "Concept"
+},
+"129": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 129,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Fatigue",
+"type": "Concept"
+},
+"13": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 13,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Autism/Autistic Behavior",
+"type": "Concept"
+},
+"130": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 130,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Fine motor skills, Abnormal",
+"type": "Concept"
+},
+"131": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 131,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Gross motor skills, Abnormal",
+"type": "Concept"
+},
+"132": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 132,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Motor delay",
+"type": "Concept"
+},
+"133": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 133,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Movement Disorder",
+"type": "Concept"
+},
+"134": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 134,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Ataxia",
+"type": "Concept"
+},
+"135": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 135,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Choreoathetosis (includes chorea and athetosis)",
+"type": "Concept"
+},
+"136": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 136,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Dyskinesia",
+"type": "Concept"
+},
+"137": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 137,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Dyspraxia, Motor (impaired coordination of movement)",
+"type": "Concept"
+},
+"138": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 138,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Gait Abnormality",
+"type": "Concept"
+},
+"139": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 139,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Balance, unsteady ",
+"type": "Concept"
+},
+"14": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 14,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Consumption Behaviors, Abnormal (Includes changes in eating and/or drinking) ",
+"type": "Concept"
+},
+"140": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 140,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Non Ambulatory",
+"type": "Concept"
+},
+"141": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 141,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Tremor/Tremulous Movements of Limbs",
+"type": "Concept"
+},
+"142": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 142,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Oral Motor Impairment (Includes tongue thrusting, tongue abnormalities, macroglossia, sucking and swallowing disorders, frequent drooling, excessive chewing, mouthing behaviors, and feeding difficulties, teeth grinding)",
+"type": "Concept"
+},
+"143": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 143,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Paralysis (includes hemiplegia, limb, arm, leg paralysis, no voluntary movement)",
+"type": "Concept"
+},
+"144": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 144,
+"depth": 2.0,
+"domain": "Motor",
+"name": "Progressive loss of skills (regression) (includes fine and/or gross motor skills)",
+"type": "Concept"
+},
+"146": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 146,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Craniofacial abnormalities (Includes: skull abnormalities, torticollis, nose abnormalities, midline retraction, abnormal eyebrows, puffy cheeks, long chin, cleft palate, high arched palate, prominent mandible, jaw abn...",
+"type": "Concept"
+},
+"147": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 147,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Dental Abnormalities (Includes abnormal dentition, large front teeth, missing adult teeth)",
+"type": "Concept"
+},
+"148": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 148,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Hands and Feet Abnormalities (includes hypoplastic distal phlanges in the hand and feet, broad hallux phalanx and thumb, proximal placement of thumb, arachnotidactyly fingers, curled fingers, Navicular bone drop,  Cal...",
+"type": "Concept"
+},
+"149": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 149,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Hernias",
+"type": "Concept"
+},
+"15": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 15,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Pica",
+"type": "Concept"
+},
+"150": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 150,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Joint Abnormalities (Includes laxity, hypermobility, pain, radial head dislocation, congenital hip dislocation)",
+"type": "Concept"
+},
+"151": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 151,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Poor head control, includes lag",
+"type": "Concept"
+},
+"152": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 152,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Rib and Chest Abnormalities (Includes sternum malformation, wide ribs)",
+"type": "Concept"
+},
+"153": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 153,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Skeletal Abnormalities ",
+"type": "Concept"
+},
+"154": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 154,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Fractures, unexplained, fragility",
+"type": "Concept"
+},
+"155": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 155,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Hip/Pelvis Abnormalities (Includes bilateral hip dysplasia)",
+"type": "Concept"
+},
+"156": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 156,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Long Bone Abnormalities (Includes twisted, shortened tibia and/or fibula)",
+"type": "Concept"
+},
+"157": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 157,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Skeletal Maturation Abnormalities (Includes bone age advanced, bone age delayed, osteoporosis, osteopenia, soft bones)",
+"type": "Concept"
+},
+"158": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 158,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Spine Abnormalities (Includes scoliosis, spina bifida, kyphosis, spinal stenosis, saccral dimple)",
+"type": "Concept"
+},
+"159": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 159,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Spasms and Contractures (Includes contractions, involuntary movement, muscle cramps)",
+"type": "Concept"
+},
+"16": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 16,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Crying, abnormal (includes spontaneous, inconsolable, lack of) ",
+"type": "Concept"
+},
+"160": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 160,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Ankle pronation (some inward rolling of ankle and foot)",
+"type": "Concept"
+},
+"161": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 161,
+"depth": 2.0,
+"domain": "Musculoskeletal",
+"name": "Stiffness (Includes muscle stiffness, joint stiffness)",
+"type": "Concept"
+},
+"163": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 163,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Cataplexy (Includes with narcolepsy, catatonia)",
+"type": "Concept"
+},
+"164": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 164,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Neuropathy (includes peripheral)",
+"type": "Concept"
+},
+"165": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 165,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Cerebral Palsy",
+"type": "Concept"
+},
+"166": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 166,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Pain sensation, abnormal",
+"type": "Concept"
+},
+"167": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 167,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Cry, Distinctive",
+"type": "Concept"
+},
+"168": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 168,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "EEG Abnormal",
+"type": "Concept"
+},
+"169": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 169,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Head Circumference, abnormal",
+"type": "Concept"
+},
+"17": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 17,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Disinhibition",
+"type": "Concept"
+},
+"170": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 170,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Macrocephaly, large head circumference",
+"type": "Concept"
+},
+"171": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 171,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Microcephaly, small head circumference, includes primary and secondary",
+"type": "Concept"
+},
+"172": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 172,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Hydrocephalus",
+"type": "Concept"
+},
+"173": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 173,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Migraine, headache, frequent",
+"type": "Concept"
+},
+"174": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 174,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Hemiplegic, migraine",
+"type": "Concept"
+},
+"175": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 175,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "MRI Abnormal",
+"type": "Concept"
+},
+"176": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 176,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Agenesis of the Corpus Callosum",
+"type": "Concept"
+},
+"177": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 177,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Chiari Malformation",
+"type": "Concept"
+},
+"178": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 178,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Corpus Callosum Defects",
+"type": "Concept"
+},
+"179": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 179,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Cortical defects",
+"type": "Concept"
+},
+"18": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 18,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Social Behavior, abnormal (Includes inappropriate behavior, overly friendly, physical contact seeking/avoiding, attention seeking, interest in others, emotional immaturity)   ",
+"type": "Concept"
+},
+"180": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 180,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Delayed myelination",
+"type": "Concept"
+},
+"181": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 181,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Progressive brain atrophy/ neurodegeneration",
+"type": "Concept"
+},
+"182": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 182,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Ventricle Anomalies (Other)",
+"type": "Concept"
+},
+"183": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 183,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Proprioception abnormal",
+"type": "Concept"
+},
+"184": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 184,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Reflexes, abnormal (hyporeflexia, hyperreflexia)",
+"type": "Concept"
+},
+"185": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 185,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Seizures (focal, tonic'-'clonic, myoclonic, resistant or progressive seizure type)",
+"type": "Concept"
+},
+"186": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 186,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Absence Seizures",
+"type": "Concept"
+},
+"187": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 187,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Febrile Seizures",
+"type": "Concept"
+},
+"188": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 188,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Focal (Partial) Seizures",
+"type": "Concept"
+},
+"189": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 189,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Aware (Simple)",
+"type": "Concept"
+},
+"19": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 19,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "ADHD (includes hyperactivity, ADD)",
+"type": "Concept"
+},
+"190": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 190,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Unaware (Complex)",
+"type": "Concept"
+},
+"191": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 191,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Infantile Spasms (Includes West Syndrome)",
+"type": "Concept"
+},
+"192": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 192,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Intractable Seizures, Refractory",
+"type": "Concept"
+},
+"193": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 193,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Nocturnal Epilepsy (seizures in sleep, night)",
+"type": "Concept"
+},
+"194": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 194,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Postictal Abnormality (Includes regression, extended fatigue)",
+"type": "Concept"
+},
+"195": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 195,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Rolandic Seizures (during transition between sleeping and waking)",
+"type": "Concept"
+},
+"196": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 196,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Status Epilepticus",
+"type": "Concept"
+},
+"197": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 197,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Tethered Cord",
+"type": "Concept"
+},
+"198": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 198,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Tone, Abnormal",
+"type": "Concept"
+},
+"199": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 199,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Hypertonia ",
+"type": "Concept"
+},
+"20": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 20,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Impulsivity",
+"type": "Concept"
+},
+"200": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 200,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Hypotonia (includes open mouth)",
+"type": "Concept"
+},
+"201": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 201,
+"depth": 2.0,
+"domain": "Neurological",
+"name": "Drooling (includes excessive salivation, sialorrhe)",
+"type": "Concept"
+},
+"202": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 202,
+"depth": 2.0,
+"domain": "Other",
+"name": "Abnormal Labs",
+"type": "Concept"
+},
+"203": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 203,
+"depth": 2.0,
+"domain": "Other",
+"name": "Autoimmune",
+"type": "Concept"
+},
+"204": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 204,
+"depth": 2.0,
+"domain": "Other",
+"name": "Dysautonomia",
+"type": "Concept"
+},
+"205": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 205,
+"depth": 2.0,
+"domain": "Other",
+"name": "Fevers",
+"type": "Concept"
+},
+"206": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 206,
+"depth": 2.0,
+"domain": "Other",
+"name": "Infection Risk High",
+"type": "Concept"
+},
+"207": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 207,
+"depth": 2.0,
+"domain": "Other",
+"name": "Neoplasm (Includes tumors, cancer, benign tumors)",
+"type": "Concept"
+},
+"208": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 208,
+"depth": 2.0,
+"domain": "Other",
+"name": "Sepsis",
+"type": "Concept"
+},
+"21": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 21,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Excitable",
+"type": "Concept"
+},
+"210": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 210,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Brain abnormality, prenatal",
+"type": "Concept"
+},
+"211": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 211,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Choroid plexus cysts",
+"type": "Concept"
+},
+"212": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 212,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Fetal movement, reduced",
+"type": "Concept"
+},
+"213": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 213,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Hydronephrosis",
+"type": "Concept"
+},
+"214": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 214,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Premature",
+"type": "Concept"
+},
+"215": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 215,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Prenatal Renal Abnormalities (Includes renal obstruction)",
+"type": "Concept"
+},
+"216": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 216,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Birth weight, abnormal (includes intrauterine growth restriction (IUGR))",
+"type": "Concept"
+},
+"217": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 217,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Pregnancy complications (includes threatened abortion, gestational diabetes)",
+"type": "Concept"
+},
+"218": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 218,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Fetal physiology, abnormal (includes jaundice, congenital pneumonia)",
+"type": "Concept"
+},
+"219": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 219,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Ultrasound Findings",
+"type": "Concept"
+},
+"22": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 22,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Lethargy (includes increasing with age)",
+"type": "Concept"
+},
+"220": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 220,
+"depth": 2.0,
+"domain": "Perinatal",
+"name": "Amniotic Fluid, Abnormal (includes Oligohydramnios and Polyhydramnios)",
+"type": "Concept"
+},
+"222": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 222,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Ecchymosis (Bruises Easily)",
+"type": "Concept"
+},
+"223": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 223,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Excess Skin ",
+"type": "Concept"
+},
+"224": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 224,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Hair Growth, Abnormal (Hypertrichosis, excess or lack of hair) ",
+"type": "Concept"
+},
+"225": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 225,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Hair Pattern, Abnormal",
+"type": "Concept"
+},
+"226": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 226,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Nail Defects ",
+"type": "Concept"
+},
+"227": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 227,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Pigmentation, Abnormal",
+"type": "Concept"
+},
+"228": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 228,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Sensitive Skin/Dermatitis (Includes eczema, psoriasis, rashes, lumps, bumps)",
+"type": "Concept"
+},
+"229": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 229,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Skin Color, Abnormal (Includes flushing, circulation issues, lacy pattern, mottling)",
+"type": "Concept"
+},
+"23": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 23,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Maladaptive behaviors (includes biting, hair'-'pulling, pinching slapping, yelling)",
+"type": "Concept"
+},
+"230": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 230,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Sweating, Abnormal (Includes absent or reduced sweating, hyperhidrosis)",
+"type": "Concept"
+},
+"231": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 231,
+"depth": 2.0,
+"domain": "Skin",
+"name": "Temperature Regulation, Poor (Includes hot and cold sensitivity)",
+"type": "Concept"
+},
+"233": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 233,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Circadian Abnormalities (sleep wake cycle in 24 hours)",
+"type": "Concept"
+},
+"234": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 234,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Disorientation (Includes when aroused)",
+"type": "Concept"
+},
+"235": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 235,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Drowsiness ",
+"type": "Concept"
+},
+"236": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 236,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "EEG Abnormal During Sleep",
+"type": "Concept"
+},
+"237": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 237,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Initiation and Maintenance Difficulties of Sleep (Includes dyssomnia, restlessness, need for physical proximity to caregiver)",
+"type": "Concept"
+},
+"238": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 238,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Narcolepsy/Excessive Daytime Sleepiness",
+"type": "Concept"
+},
+"239": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 239,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Restless Legs",
+"type": "Concept"
+},
+"24": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 24,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Mouth stuffing and pocket filling",
+"type": "Concept"
+},
+"240": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 240,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Sleep Apnea (Includes snoring)",
+"type": "Concept"
+},
+"241": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 241,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Sleep Duration, Abnormal",
+"type": "Concept"
+},
+"242": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 242,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Parasomnia (includes sleepwalking)",
+"type": "Concept"
+},
+"243": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 243,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "SUDEP (seizure in sleep causing death)",
+"type": "Concept"
+},
+"244": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 244,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Teeth Grinding (includes when awake bruxism)",
+"type": "Concept"
+},
+"245": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 245,
+"depth": 2.0,
+"domain": "Sleep",
+"name": "Terrors, night terrors (unable to describe)",
+"type": "Concept"
+},
+"247": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 247,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Alacrima (absent tears)",
+"type": "Concept"
+},
+"248": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 248,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Amblyopia (Includes lazy eye)",
+"type": "Concept"
+},
+"249": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 249,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Blindness",
+"type": "Concept"
+},
+"25": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 25,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Oppositional behaviors, includes oppositional defiance disorder",
+"type": "Concept"
+},
+"250": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 250,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Cataracts",
+"type": "Concept"
+},
+"251": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 251,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Cortical Visual Impairment (Includes suspected but not proven)",
+"type": "Concept"
+},
+"252": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 252,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Eye Movement, Abnormal (includes dystonic)",
+"type": "Concept"
+},
+"253": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 253,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Nystagmus (Includes Nystagmus'-'like, opsoclonus'-'like eye movement issue, aberrant gaze saccades)",
+"type": "Concept"
+},
+"254": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 254,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Oculogyric Crisis ",
+"type": "Concept"
+},
+"255": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 255,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Eye, Anatomical Abnormalities (includes epicanthic folds, downslanting palpebral fissures, asymetrical ptosis, puffy eyelids, long eyelashes)",
+"type": "Concept"
+},
+"256": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 256,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Light Sensitivity (photosensitive)",
+"type": "Concept"
+},
+"257": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 257,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Optic Nerve Abnormality (includes atrophy, hypoplasia)",
+"type": "Concept"
+},
+"258": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 258,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Strabismus (includes abnormal eye movements, tracking difficulties, exotropia)",
+"type": "Concept"
+},
+"259": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 259,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Visual Impairment (includes peripheral vision loss, nearsightedness, farsightedness, needs glasses)",
+"type": "Concept"
+},
+"26": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 26,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Repetitive behaviors (includes OCD, hand-wringing, compulsions, rituals, loud repetitive vocalizations)",
+"type": "Concept"
+},
+"260": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 260,
+"depth": 2.0,
+"domain": "Visual",
+"name": "Visual'-'Spatial Issues (Includes depth perception)",
+"type": "Concept"
+},
+"263": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 263,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Education Impact",
+"type": "Concept"
+},
+"264": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 264,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Absenteeism",
+"type": "Concept"
+},
+"265": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 265,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Academic Support Needed, IEP, Individualized Education Plan",
+"type": "Concept"
+},
+"266": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 266,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Curriculum Adaptations",
+"type": "Concept"
+},
+"267": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 267,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Diet '-' specialized implementation necessary ",
+"type": "Concept"
+},
+"268": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 268,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Educational Setting Restricted ",
+"type": "Concept"
+},
+"269": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 269,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Nursing, in'-'school",
+"type": "Concept"
+},
+"27": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 27,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Fixated interest, or atypical interest in or use of objects (such as water, crinkly items, mirrors, reflections, paper, twirling hair, music, outdoors, ceiling fans, vehicles, opening closing doors",
+"type": "Concept"
+},
+"270": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 270,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Shortened school day",
+"type": "Concept"
+},
+"271": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 271,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Literacy and/or writing, severely delayed",
+"type": "Concept"
+},
+"272": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 272,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Social and Family Impact",
+"type": "Concept"
+},
+"273": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 273,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Behaviors are challenging in social situations, such as yelling, stubbornness, demanding, or withdrawn",
+"type": "Concept"
+},
+"274": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 274,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Communication, difficult to be understood outside the family",
+"type": "Concept"
+},
+"275": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 275,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Engaged socially (Capable of social engagement, establishing intentional relationships)",
+"type": "Concept"
+},
+"276": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 276,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Extracurricular activities require adaptations",
+"type": "Concept"
+},
+"277": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 277,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Impulsive or Inappropriate social behavior (may greet people with grabbing, overly friendly)",
+"type": "Concept"
+},
+"278": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 278,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Laughter, Inappropriate (not typical social context)",
+"type": "Concept"
+},
+"279": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 279,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Law enforcement encounters - includes security guards and police (individual impact)",
+"type": "Concept"
+},
+"28": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 28,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Perseveration (includes repetitive speech/verbalization)",
+"type": "Concept"
+},
+"280": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 280,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Navigating new environments, needs assistance",
+"type": "Concept"
+},
+"281": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 281,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Safety (cross street, elopement, burn risk), Judgement Impaired, Danger Awareness Decreased",
+"type": "Concept"
+},
+"282": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 282,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Sibling relationships, typical",
+"type": "Concept"
+},
+"283": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 283,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Social isolation (includes isolation because of treatments, inability to communicate, inability to move)",
+"type": "Concept"
+},
+"284": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 284,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Sports or Play with others (difficult or impossible)",
+"type": "Concept"
+},
+"285": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 285,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Transitioning issues (difficulty adapting to change, routine needed, rigid behavior)",
+"type": "Concept"
+},
+"286": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 286,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Work Impact",
+"type": "Concept"
+},
+"287": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 287,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Work, Difficult or Impossible",
+"type": "Concept"
+},
+"288": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 288,
+"depth": 2.0,
+"domain": "Distal Impacts",
+"name": "Work, Reduced Schedule ",
+"type": "Concept"
+},
+"29": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 29,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Sensory behavior, abnormal (sensory-seeking, spinning, eye'-'poking, hair brushing, touching hands)",
+"type": "Concept"
+},
+"290": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 290,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Health Impact (individual impact)",
+"type": "Concept"
+},
+"291": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 291,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Appointments, Frequent (individual impact)",
+"type": "Concept"
+},
+"292": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 292,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Hospitalizations, Frequent (individual impact)",
+"type": "Concept"
+},
+"293": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 293,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "ICU",
+"type": "Concept"
+},
+"294": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 294,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "NICU",
+"type": "Concept"
+},
+"295": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 295,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Overall Health Impaired",
+"type": "Concept"
+},
+"296": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 296,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Cancer Risk Increased",
+"type": "Concept"
+},
+"297": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 297,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Falls",
+"type": "Concept"
+},
+"298": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 298,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Mortality Risk Increased",
+"type": "Concept"
+},
+"299": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 299,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Pain",
+"type": "Concept"
+},
+"3": {
+"category": "DEMOGRAPHICS",
+"category_color": "#999999",
+"code_id": 3,
+"depth": 2.0,
+"domain": "Demographics",
+"name": "12 to 17 years of age",
+"type": "Concept"
+},
+"30": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 30,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Restlessness (includes agitation, exploratory mobility) ",
+"type": "Concept"
+},
+"300": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 300,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Resuscitation Needed",
+"type": "Concept"
+},
+"301": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 301,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Severely Ill",
+"type": "Concept"
+},
+"302": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 302,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Suffering",
+"type": "Concept"
+},
+"303": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 303,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Perinatal",
+"type": "Concept"
+},
+"304": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 304,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Surgical/Medical Interventions, Necessary, Frequent",
+"type": "Concept"
+},
+"305": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 305,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Self Care and Daily Living Impact",
+"type": "Concept"
+},
+"306": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 306,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Activities of Daily Living (ADL): Requires 100% Support  ",
+"type": "Concept"
+},
+"307": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 307,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Assistance with Activities of Daily Living (ADL): Requires Partial Support",
+"type": "Concept"
+},
+"308": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 308,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Assisted Living Facility (ALF)",
+"type": "Concept"
+},
+"309": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 309,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Bathing assistance needed (includes all hygiene)",
+"type": "Concept"
+},
+"31": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 31,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Self'-'Injurious Behavior (include self'-'harm, head banging, trichotillomania, wound picking, skin picking, biting self)",
+"type": "Concept"
+},
+"310": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 310,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Dressing assistance needed",
+"type": "Concept"
+},
+"311": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 311,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Eating and drinking assistance needed",
+"type": "Concept"
+},
+"312": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 312,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Following complex directions",
+"type": "Concept"
+},
+"313": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 313,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Household tasks assistance needed (includes preparing food)",
+"type": "Concept"
+},
+"314": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 314,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Mobility assistance needed",
+"type": "Concept"
+},
+"315": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 315,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Regression in Activities of Daily Living (ADL)",
+"type": "Concept"
+},
+"316": {
+"category": "INDIVIDUAL IMPACTS",
+"category_color": "#ED7D31",
+"code_id": 316,
+"depth": 2.0,
+"domain": "Proximal Impacts",
+"name": "Toileting assistance needed",
+"type": "Concept"
+},
+"319": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 319,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Caregiver Effort Requirement",
+"type": "Concept"
+},
+"32": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 32,
+"depth": 2.0,
+"domain": "Behavior",
+"name": "Temper tantrums",
+"type": "Concept"
+},
+"320": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 320,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Advocacy Role, advocacy for patient provided by caregiver",
+"type": "Concept"
+},
+"321": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 321,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Appointments, frequent (caregiver impact)",
+"type": "Concept"
+},
+"322": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 322,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Diagnostic odyssey",
+"type": "Concept"
+},
+"323": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 323,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Hospitalizations, frequent (caregiver impact)",
+"type": "Concept"
+},
+"324": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 324,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Medical Care'-' medical interventions must be provided by caregiver and family members(medications, bowl wash out, chest physio, etc.)",
+"type": "Concept"
+},
+"325": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 325,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Time needed for care (e.g. feeding, morning & bedtime routines, organization of medical care)",
+"type": "Concept"
+},
+"326": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 326,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Daily Living Impacts",
+"type": "Concept"
+},
+"327": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 327,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Formal Support System Needed",
+"type": "Concept"
+},
+"328": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 328,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Family members",
+"type": "Concept"
+},
+"329": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 329,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Government Assistance",
+"type": "Concept"
+},
+"330": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 330,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Nursing 24 hr",
+"type": "Concept"
+},
+"331": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 331,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Other Caregivers",
+"type": "Concept"
+},
+"332": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 332,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Respite",
+"type": "Concept"
+},
+"333": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 333,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Household tasks (difficult to complete), includes caring for other children",
+"type": "Concept"
+},
+"334": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 334,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Emotional Impact",
+"type": "Concept"
+},
+"335": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 335,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Anxiety and stress",
+"type": "Concept"
+},
+"336": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 336,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Denial",
+"type": "Concept"
+},
+"337": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 337,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Depression and sadness",
+"type": "Concept"
+},
+"338": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 338,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Embarrassment (managing behavior of child in public)",
+"type": "Concept"
+},
+"339": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 339,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Fear",
+"type": "Concept"
+},
+"34": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 34,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Cardiac Defect/Structural Abnormality (pulmonary atresia, murmur, mitral valve disease, enlarged, atrial septal defects, arrythmia, murmur, bradycardia, low heart rate)",
+"type": "Concept"
+},
+"340": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 340,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Frustration (caregiver impact)",
+"type": "Concept"
+},
+"341": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 341,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Grief Reaction",
+"type": "Concept"
+},
+"342": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 342,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Guilt",
+"type": "Concept"
+},
+"343": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 343,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Impact on intimate relationship, marital strain, divorce",
+"type": "Concept"
+},
+"344": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 344,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Post-traumatic stress disorder (PTSD)",
+"type": "Concept"
+},
+"345": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 345,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Resentment",
+"type": "Concept"
+},
+"346": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 346,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Substance abuse, includes alcoholism",
+"type": "Concept"
+},
+"347": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 347,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Vigilance and flexibility needed to care for child",
+"type": "Concept"
+},
+"348": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 348,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Financial Impact",
+"type": "Concept"
+},
+"349": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 349,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Destruction of possessions by child",
+"type": "Concept"
+},
+"35": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 35,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Cardiac Failure (Heart Failure, Hypertrophy, Cardiomyopathy)",
+"type": "Concept"
+},
+"350": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 350,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Financial burden",
+"type": "Concept"
+},
+"351": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 351,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Home or vehicle modifications",
+"type": "Concept"
+},
+"352": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 352,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Work, reduced capacity",
+"type": "Concept"
+},
+"353": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 353,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Health Impact (caregiver impact)",
+"type": "Concept"
+},
+"354": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 354,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Fatigue, exhaustion",
+"type": "Concept"
+},
+"355": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 355,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Injuries (risk of falling and increased injuries due to assisting younger children exploratory behaviors, impulse control)",
+"type": "Concept"
+},
+"356": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 356,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Medical and therapy appointments for parents increased due to issues caused by child's disorder (injuries, psychiatric)",
+"type": "Concept"
+},
+"357": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 357,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Sleep, disrupted",
+"type": "Concept"
+},
+"358": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 358,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Reproductive/Family Planning",
+"type": "Concept"
+},
+"359": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 359,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Social Impacts",
+"type": "Concept"
+},
+"36": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 36,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Dystussia (difficulty coughing)",
+"type": "Concept"
+},
+"360": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 360,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Independence, mobility, and agency decreased due to child's need for daily care",
+"type": "Concept"
+},
+"361": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 361,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Law enforcement encounters - includes security guards and police (caregiver impact)",
+"type": "Concept"
+},
+"362": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 362,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Privacy, Loss of",
+"type": "Concept"
+},
+"363": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 363,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Siblings and family impacted",
+"type": "Concept"
+},
+"364": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 364,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Social Isolation, Loneliness",
+"type": "Concept"
+},
+"365": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 365,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Socialization and leisure activities reduced or modified",
+"type": "Concept"
+},
+"366": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 366,
+"depth": 2.0,
+"domain": "Caregiver and Family Burden",
+"name": "Stigma",
+"type": "Concept"
+},
+"368": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 368,
+"depth": 2.0,
+"domain": "Diagnostic Journey",
+"name": "Age of Diagnosis",
+"type": "Concept"
+},
+"369": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 369,
+"depth": 2.0,
+"domain": "Diagnostic Journey",
+"name": "Challenges",
+"type": "Concept"
+},
+"37": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 37,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Hypersecretion",
+"type": "Concept"
+},
+"370": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 370,
+"depth": 2.0,
+"domain": "Diagnostic Journey",
+"name": "Genetic testing",
+"type": "Concept"
+},
+"371": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 371,
+"depth": 2.0,
+"domain": "Diagnostic Journey",
+"name": "Initial Diagnosis (misdiagnosis)",
+"type": "Concept"
+},
+"372": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 372,
+"depth": 2.0,
+"domain": "Diagnostic Journey",
+"name": "Initial Symptoms",
+"type": "Concept"
+},
+"373": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 373,
+"depth": 2.0,
+"domain": "Diagnostic Journey",
+"name": "Medical Provider",
+"type": "Concept"
+},
+"374": {
+"category": "CAREGIVER IMPACTS",
+"category_color": "#70AD47",
+"code_id": 374,
+"depth": 2.0,
+"domain": "Diagnostic Journey",
+"name": "Missed Milestones",
+"type": "Concept"
+},
+"378": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 378,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Adaptive equipment (includes technology, like AAC devices and zoom/telehealth)",
+"type": "Concept"
+},
+"379": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 379,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Alternative Treatments Available",
+"type": "Concept"
+},
+"38": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 38,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Irregular Heart Rate",
+"type": "Concept"
+},
+"380": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 380,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Cleaner, Landscaper, Chef, Personal Assistant, Gardener, Dog Walker",
+"type": "Concept"
+},
+"381": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 381,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Educator (In Home)",
+"type": "Concept"
+},
+"382": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 382,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Early Intervention Program",
+"type": "Concept"
+},
+"383": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 383,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Healthcare Provider and Appointment Access ",
+"type": "Concept"
+},
+"384": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 384,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "In home medical care (nurses, therapies)",
+"type": "Concept"
+},
+"385": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 385,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Information/Knowledge",
+"type": "Concept"
+},
+"386": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 386,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Diagnosis Identified",
+"type": "Concept"
+},
+"387": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 387,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Education of parent",
+"type": "Concept"
+},
+"388": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 388,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Lack of information on disorder",
+"type": "Concept"
+},
+"389": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 389,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Insurance",
+"type": "Concept"
+},
+"39": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 39,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Blood pressure, abnormal (hypertension, hypotension, high, low)",
+"type": "Concept"
+},
+"390": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 390,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Legal assistance, child advocate",
+"type": "Concept"
+},
+"391": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 391,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Regional differences in access to services, insurance and medical care",
+"type": "Concept"
+},
+"392": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 392,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Respite care",
+"type": "Concept"
+},
+"393": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 393,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Treatment for family members (anxiety medication, counseling)",
+"type": "Concept"
+},
+"395": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 395,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Community via facebook, foundation and support groups",
+"type": "Concept"
+},
+"396": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 396,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Supportive Community, including School",
+"type": "Concept"
+},
+"397": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 397,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Research, participation",
+"type": "Concept"
+},
+"398": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 398,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Supportive family",
+"type": "Concept"
+},
+"4": {
+"category": "DEMOGRAPHICS",
+"category_color": "#999999",
+"code_id": 4,
+"depth": 2.0,
+"domain": "Demographics",
+"name": "18 to 29 years of age",
+"type": "Concept"
+},
+"40": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 40,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Lower Respiratory Infections, recurrent, includes pneumonia",
+"type": "Concept"
+},
+"400": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 400,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Bereavement counseling",
+"type": "Concept"
+},
+"401": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 401,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Hospice",
+"type": "Concept"
+},
+"402": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 402,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Multidisciplinary Care",
+"type": "Concept"
+},
+"403": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 403,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Palliative Care",
+"type": "Concept"
+},
+"404": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 404,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Shared Decision Making",
+"type": "Concept"
+},
+"407": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 407,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Coping strategies (caregivers)",
+"type": "Concept"
+},
+"408": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 408,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Spiritual beliefs",
+"type": "Concept"
+},
+"41": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 41,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Respiration, Abnormal (Includes Asthma, Hypoxia, Restrictive Airway Disease)",
+"type": "Concept"
+},
+"410": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 410,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Menses-related modification of symptoms",
+"type": "Concept"
+},
+"412": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 412,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Job flexiblity and financial resources",
+"type": "Concept"
+},
+"413": {
+"category": "MODIFYING FACTORS",
+"category_color": "#FFC000",
+"code_id": 413,
+"depth": 2.0,
+"domain": "Access Modifier",
+"name": "Professional Expertise of parent/caregivers",
+"type": "Concept"
+},
+"416": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 416,
+"depth": 2.0,
+"domain": "Adaptive or Special Equipment Required",
+"name": "Alternative and/or Augmentative Communication Devices Used",
+"type": "Concept"
+},
+"417": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 417,
+"depth": 2.0,
+"domain": "Adaptive or Special Equipment Required",
+"name": "Hearing Aids",
+"type": "Concept"
+},
+"418": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 418,
+"depth": 2.0,
+"domain": "Adaptive or Special Equipment Required",
+"name": "Mobility Equipment",
+"type": "Concept"
+},
+"419": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 419,
+"depth": 2.0,
+"domain": "Adaptive or Special Equipment Required",
+"name": "AFOs '-' angle foot orhosis, orthotics",
+"type": "Concept"
+},
+"42": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 42,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Apneic Episodes",
+"type": "Concept"
+},
+"420": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 420,
+"depth": 2.0,
+"domain": "Adaptive or Special Equipment Required",
+"name": "Service Animal",
+"type": "Concept"
+},
+"421": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 421,
+"depth": 2.0,
+"domain": "Adaptive or Special Equipment Required",
+"name": "Standers, standing frame",
+"type": "Concept"
+},
+"422": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 422,
+"depth": 2.0,
+"domain": "Adaptive or Special Equipment Required",
+"name": "Wheelchair",
+"type": "Concept"
+},
+"423": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 423,
+"depth": 2.0,
+"domain": "Adaptive or Special Equipment Required",
+"name": "Sleep positioning",
+"type": "Concept"
+},
+"425": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 425,
+"depth": 2.0,
+"domain": "Dietary",
+"name": "Gluten Free",
+"type": "Concept"
+},
+"426": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 426,
+"depth": 2.0,
+"domain": "Dietary",
+"name": "IV Nutrition/Fluids (TPN)",
+"type": "Concept"
+},
+"427": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 427,
+"depth": 2.0,
+"domain": "Dietary",
+"name": "Ketogenic diet",
+"type": "Concept"
+},
+"428": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 428,
+"depth": 2.0,
+"domain": "Dietary",
+"name": "Lactose, dairy free",
+"type": "Concept"
+},
+"429": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 429,
+"depth": 2.0,
+"domain": "Dietary",
+"name": "Tube fed (PEG, NG, etc)",
+"type": "Concept"
+},
+"43": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 43,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Aspiration, Includes Silent",
+"type": "Concept"
+},
+"432": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 432,
+"depth": 2.0,
+"domain": "Experimental Therapies",
+"name": "Bowel Wash Out",
+"type": "Concept"
+},
+"433": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 433,
+"depth": 2.0,
+"domain": "Experimental Therapies",
+"name": "Catheterization",
+"type": "Concept"
+},
+"434": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 434,
+"depth": 2.0,
+"domain": "Experimental Therapies",
+"name": "Respiratory care at home (Other)",
+"type": "Concept"
+},
+"435": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 435,
+"depth": 2.0,
+"domain": "Experimental Therapies",
+"name": "Sanitary Measure, Excessive Needed to Prevent Infection",
+"type": "Concept"
+},
+"436": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 436,
+"depth": 2.0,
+"domain": "Experimental Therapies",
+"name": "Suctioning",
+"type": "Concept"
+},
+"438": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 438,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "albuterol, levalbuterol, ProAir, Proventil, Ventolin, Xopenex",
+"type": "Concept"
+},
+"439": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 439,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "amphetamine salts, Adderall",
+"type": "Concept"
+},
+"44": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 44,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Respiratory Distress/Failure",
+"type": "Concept"
+},
+"440": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 440,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Anti'-'diarrheal medications (unspecified)",
+"type": "Concept"
+},
+"441": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 441,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Antibiotics",
+"type": "Concept"
+},
+"442": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 442,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "aripiprazole, Ability, Aristada",
+"type": "Concept"
+},
+"443": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 443,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "atomoxetine, Strattera",
+"type": "Concept"
+},
+"444": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 444,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "atropine",
+"type": "Concept"
+},
+"445": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 445,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Behavioral modifying medications (unspecified)",
+"type": "Concept"
+},
+"446": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 446,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Bowel treatment medications (unspecified)",
+"type": "Concept"
+},
+"447": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 447,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "budesonide, Pulmicort, Airsupra",
+"type": "Concept"
+},
+"448": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 448,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "bupropion, Wellbutrin",
+"type": "Concept"
+},
+"449": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 449,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "cannabidiol, Epidiolex",
+"type": "Concept"
+},
+"45": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 45,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Structural Respiratory Abnormality (pulmonary atresia)",
+"type": "Concept"
+},
+"450": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 450,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "CBD with or without THC, Jayden's Juice, Charlotte's web, (non'-'FDA approved)",
+"type": "Concept"
+},
+"451": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 451,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Chemotherapy",
+"type": "Concept"
+},
+"452": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 452,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "clobazam, Onfi",
+"type": "Concept"
+},
+"453": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 453,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "clonazepam, Klonopin",
+"type": "Concept"
+},
+"454": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 454,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "clonidine, Catapress, Kapvay, Onyda XR",
+"type": "Concept"
+},
+"455": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 455,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "CoQ10, Qunol, Coenzyme Q10",
+"type": "Concept"
+},
+"456": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 456,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "diazepam, Diastat Rectal Gel, Valtoco nasal spray, Valium",
+"type": "Concept"
+},
+"457": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 457,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "docusate, Colace, stool softner",
+"type": "Concept"
+},
+"458": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 458,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "duloxetine, Cymbalta",
+"type": "Concept"
+},
+"459": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 459,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Emotional modifying medications (unspecified)",
+"type": "Concept"
+},
+"46": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 46,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Syncope (fainting)",
+"type": "Concept"
+},
+"460": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 460,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Enemas",
+"type": "Concept"
+},
+"461": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 461,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Erythromycin, E.E.S",
+"type": "Concept"
+},
+"462": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 462,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "escitalopram, Lexapro",
+"type": "Concept"
+},
+"463": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 463,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "esomeprazole, Nexium",
+"type": "Concept"
+},
+"464": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 464,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "famotadine, Pepcid",
+"type": "Concept"
+},
+"465": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 465,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "fenfluramine, Fintepla",
+"type": "Concept"
+},
+"466": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 466,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "fluoextine, Prozac",
+"type": "Concept"
+},
+"467": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 467,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "fluticasone, Flovent, Advair",
+"type": "Concept"
+},
+"468": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 468,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "gabapentin, Neurontin, Gralise",
+"type": "Concept"
+},
+"469": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 469,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "glycerol, suppositories",
+"type": "Concept"
+},
+"47": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 47,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Tonsils/Adenoids, Abnormal",
+"type": "Concept"
+},
+"470": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 470,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "glycopyrrolate, Robinul",
+"type": "Concept"
+},
+"471": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 471,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Growth Hormone",
+"type": "Concept"
+},
+"472": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 472,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "guanfacine, Intuniv",
+"type": "Concept"
+},
+"473": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 473,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Hypersecretion/Hyperhidrosis/Hypersalivation medications (unspecified)",
+"type": "Concept"
+},
+"474": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 474,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Inhalers or Nebulizers (unspecified)",
+"type": "Concept"
+},
+"475": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 475,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "ipratropium, Atrovent",
+"type": "Concept"
+},
+"476": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 476,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Lacosamide, Vimpat",
+"type": "Concept"
+},
+"477": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 477,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "lamotrigine, Lamictal",
+"type": "Concept"
+},
+"478": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 478,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "lansoprazole, Prevacid",
+"type": "Concept"
+},
+"479": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 479,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Laxatives (unspecified)",
+"type": "Concept"
+},
+"48": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 48,
+"depth": 2.0,
+"domain": "Cardiorespiratory",
+"name": "Upper Respiratory Infections, recurrent, sinusitus",
+"type": "Concept"
+},
+"480": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 480,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Levetiracetum, Keppra",
+"type": "Concept"
+},
+"481": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 481,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "lisdexamfetamine, Vyvanse",
+"type": "Concept"
+},
+"482": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 482,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "loperamide, Imodium",
+"type": "Concept"
+},
+"483": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 483,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "lorazepam, Ativan",
+"type": "Concept"
+},
+"484": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 484,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Medical Aid in Dying, Euthansia",
+"type": "Concept"
+},
+"485": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 485,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Melatonin",
+"type": "Concept"
+},
+"486": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 486,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "methylphenidate, Ritalin, Concerta",
+"type": "Concept"
+},
+"487": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 487,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "midazolam, Nayzilam, nasal spray",
+"type": "Concept"
+},
+"488": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 488,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "mometasone, Dulera, Asmanex",
+"type": "Concept"
+},
+"489": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 489,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "olanzapine, Zyprexa, Zyprexa Zydis",
+"type": "Concept"
+},
+"490": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 490,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "omega 3s, fish oil, DHA, EPA",
+"type": "Concept"
+},
+"491": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 491,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "omeprazole, Prilosec",
+"type": "Concept"
+},
+"492": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 492,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "ondansetron, Zofran",
+"type": "Concept"
+},
+"493": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 493,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "opioids, oxycodone, fentanyl, morphine, hydrocodone, hydromorphone Percocet, Oxycontin, Lortab, Vicodin, Dilaudid",
+"type": "Concept"
+},
+"494": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 494,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Oxygen",
+"type": "Concept"
+},
+"495": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 495,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Pain medication (unspecified)",
+"type": "Concept"
+},
+"496": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 496,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "pantoprazole, Protonix",
+"type": "Concept"
+},
+"497": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 497,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "polyethylene glycol 3350, PEG, Miralax",
+"type": "Concept"
+},
+"498": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 498,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "pregabalin, Lyrica",
+"type": "Concept"
+},
+"499": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 499,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Probiotics",
+"type": "Concept"
+},
+"5": {
+"category": "DEMOGRAPHICS",
+"category_color": "#999999",
+"code_id": 5,
+"depth": 2.0,
+"domain": "Demographics",
+"name": "2 to 4 years of age",
+"type": "Concept"
+},
+"50": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 50,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Abstract Concepts Difficult ",
+"type": "Concept"
+},
+"500": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 500,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "psyllium, fiber, Metamucil",
+"type": "Concept"
+},
+"501": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 501,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "quetiapine, Seroquel",
+"type": "Concept"
+},
+"502": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 502,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Reflux, stomach, chronic vomitting, dymotility medication (unspecified)",
+"type": "Concept"
+},
+"503": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 503,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Rescue seizure medications (unspecified)",
+"type": "Concept"
+},
+"504": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 504,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Respiratory medications (unspecified)",
+"type": "Concept"
+},
+"505": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 505,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "risperidone, Risperdal, Risperdal Consta",
+"type": "Concept"
+},
+"506": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 506,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "rufinamide, Banzel",
+"type": "Concept"
+},
+"507": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 507,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "scopolamine, Patch, Transdermal, Transderm Scop",
+"type": "Concept"
+},
+"508": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 508,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Seizure medications (unspecified)",
+"type": "Concept"
+},
+"509": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 509,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "sennosides, bisacodyl, Senna, Dulcolax, stimulant laxatives",
+"type": "Concept"
+},
+"51": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 51,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Cognitive Decline/Regression",
+"type": "Concept"
+},
+"510": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 510,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "sertraline, Zoloft",
+"type": "Concept"
+},
+"511": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 511,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Sleep medications (unspecified)",
+"type": "Concept"
+},
+"512": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 512,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "Supplements (unspecified)",
+"type": "Concept"
+},
+"513": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 513,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "THC, marijuana",
+"type": "Concept"
+},
+"514": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 514,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "tramadol, Ultram",
+"type": "Concept"
+},
+"515": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 515,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "valproic acid, VPA, depakene, Depekote, Divalproex",
+"type": "Concept"
+},
+"516": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 516,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "venlafaxine, Effexor",
+"type": "Concept"
+},
+"517": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 517,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "ziprasidone, Geodon",
+"type": "Concept"
+},
+"518": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 518,
+"depth": 2.0,
+"domain": "Medication Intervention",
+"name": "zonisamide, Zonegran",
+"type": "Concept"
+},
+"52": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 52,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Memory Challenges",
+"type": "Concept"
+},
+"521": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 521,
+"depth": 2.0,
+"domain": "surgical/med",
+"name": "tympanostomy tube, ear tubes",
+"type": "Concept"
+},
+"522": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 522,
+"depth": 2.0,
+"domain": "surgical/med",
+"name": "Casting Feet",
+"type": "Concept"
+},
+"523": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 523,
+"depth": 2.0,
+"domain": "surgical/med",
+"name": "Colostomy",
+"type": "Concept"
+},
+"524": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 524,
+"depth": 2.0,
+"domain": "surgical/med",
+"name": "Vagal Nerve Stimulator",
+"type": "Concept"
+},
+"526": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 526,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Applied Behavior Analysis (ABA)",
+"type": "Concept"
+},
+"527": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 527,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Aqua",
+"type": "Concept"
+},
+"528": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 528,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Behavioral Therapy",
+"type": "Concept"
+},
+"529": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 529,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Chest physio",
+"type": "Concept"
+},
+"53": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 53,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Reduced consciousness (includes coma, vegetative state, unconscious)",
+"type": "Concept"
+},
+"530": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 530,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Counseling",
+"type": "Concept"
+},
+"531": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 531,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Dietician",
+"type": "Concept"
+},
+"532": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 532,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Hippotherapy (Horse)",
+"type": "Concept"
+},
+"533": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 533,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Intensive Therapies Program (includes NAPA)",
+"type": "Concept"
+},
+"534": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 534,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Phototherapy (includes for jaundice)",
+"type": "Concept"
+},
+"535": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 535,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Massage, chiropractor",
+"type": "Concept"
+},
+"536": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 536,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Multisensory Impairment Therapy",
+"type": "Concept"
+},
+"537": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 537,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Music therapy",
+"type": "Concept"
+},
+"538": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 538,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Oral sucking training (including feeding training)",
+"type": "Concept"
+},
+"539": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 539,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Occupational therapy (OT)",
+"type": "Concept"
+},
+"54": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 54,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Executive Function Skills, Impaired (logic, planning, time'-'management, organization)",
+"type": "Concept"
+},
+"540": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 540,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Play therapy (developmental therapy, neuropsychomotricity, psychomotrocity, psychomotor therapy)",
+"type": "Concept"
+},
+"541": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 541,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Physical therapy (PT)",
+"type": "Concept"
+},
+"542": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 542,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Speech",
+"type": "Concept"
+},
+"543": {
+"category": "MEDICAL INTERVENTIONS",
+"category_color": "#9966CC",
+"code_id": 543,
+"depth": 2.0,
+"domain": "Therapies Required",
+"name": "Vision",
+"type": "Concept"
+},
+"55": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 55,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Global Developmental Delay (Children < 5, includes Vineland, VABS-3, lower adaptive behavior) ",
+"type": "Concept"
+},
+"56": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 56,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Intellectual Disability (includes Cognitive Disability)",
+"type": "Concept"
+},
+"57": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 57,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Cognitive impairment",
+"type": "Concept"
+},
+"58": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 58,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Judgement Impaired: Danger awareness limited",
+"type": "Concept"
+},
+"59": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 59,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Memory Enhanced",
+"type": "Concept"
+},
+"6": {
+"category": "DEMOGRAPHICS",
+"category_color": "#999999",
+"code_id": 6,
+"depth": 2.0,
+"domain": "Demographics",
+"name": "30 years and older",
+"type": "Concept"
+},
+"60": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 60,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Learning disability (includes dyslexia)",
+"type": "Concept"
+},
+"61": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 61,
+"depth": 2.0,
+"domain": "Cognition",
+"name": "Processing Disorder (includes agnosia)",
+"type": "Concept"
+},
+"63": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 63,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Dysarthria",
+"type": "Concept"
+},
+"64": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 64,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Echolalia",
+"type": "Concept"
+},
+"65": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 65,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Speech Delay",
+"type": "Concept"
+},
+"66": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 66,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Expressive Communication Decreased",
+"type": "Concept"
+},
+"67": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 67,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Non-speaking communication through the use of eye contact, facial expression, body postures and gestures",
+"type": "Concept"
+},
+"68": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 68,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Verbal Language can be used to Communicate (Includes few words)",
+"type": "Concept"
+},
+"69": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 69,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Sign language (includes ASL)",
+"type": "Concept"
+},
+"7": {
+"category": "DEMOGRAPHICS",
+"category_color": "#999999",
+"code_id": 7,
+"depth": 2.0,
+"domain": "Demographics",
+"name": "5 to 11 years of age",
+"type": "Concept"
+},
+"70": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 70,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Receptive Communication Decreased",
+"type": "Concept"
+},
+"71": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 71,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Speech, Abnormal",
+"type": "Concept"
+},
+"72": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 72,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Speech, Absent (Non-speaking)",
+"type": "Concept"
+},
+"73": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 73,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Speech Impediment (includes pronunciation/verbal impairments '-' cerebellar)",
+"type": "Concept"
+},
+"74": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 74,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Speech Regression",
+"type": "Concept"
+},
+"75": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 75,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Strong Desire to Communicate",
+"type": "Concept"
+},
+"76": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 76,
+"depth": 2.0,
+"domain": "Communication",
+"name": "Verbal Approximation, vocalizes but does not have full speech (baba, wawa) ",
+"type": "Concept"
+},
+"78": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 78,
+"depth": 2.0,
+"domain": "Emotional",
+"name": "Anxiety (includes panic attacks, social anxiety, separation anxiety)",
+"type": "Concept"
+},
+"79": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 79,
+"depth": 2.0,
+"domain": "Emotional",
+"name": "Apathy",
+"type": "Concept"
+},
+"8": {
+"category": "DEMOGRAPHICS",
+"category_color": "#999999",
+"code_id": 8,
+"depth": 2.0,
+"domain": "Demographics",
+"name": "Under 2 years of age",
+"type": "Concept"
+},
+"80": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 80,
+"depth": 2.0,
+"domain": "Emotional",
+"name": "Fear, Abnormal",
+"type": "Concept"
+},
+"81": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 81,
+"depth": 2.0,
+"domain": "Emotional",
+"name": "Frustration (symptom)",
+"type": "Concept"
+},
+"82": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 82,
+"depth": 2.0,
+"domain": "Emotional",
+"name": "Happy Demeanor (includes Placid/Content)",
+"type": "Concept"
+},
+"83": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 83,
+"depth": 2.0,
+"domain": "Emotional",
+"name": "Irritability",
+"type": "Concept"
+},
+"84": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 84,
+"depth": 2.0,
+"domain": "Emotional",
+"name": "Mood Swings (includes lack of self'-'regulation)",
+"type": "Concept"
+},
+"85": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 85,
+"depth": 2.0,
+"domain": "Emotional",
+"name": "Neuropsychiatric Issues (includes suspicion of bipolar, bipolar, hallucinations, catatonia, schizophrenia, depression)",
+"type": "Concept"
+},
+"87": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 87,
+"depth": 2.0,
+"domain": "Endocrine",
+"name": "Adrenal Gland Abnormality (Includes adrenal insuffiency)",
+"type": "Concept"
+},
+"88": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 88,
+"depth": 2.0,
+"domain": "Endocrine",
+"name": "Diabetes type 2",
+"type": "Concept"
+},
+"89": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 89,
+"depth": 2.0,
+"domain": "Endocrine",
+"name": "Growth hormone deficiency",
+"type": "Concept"
+},
+"90": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 90,
+"depth": 2.0,
+"domain": "Endocrine",
+"name": "Premenstrual syndrome (PMS) (includes PMDD)",
+"type": "Concept"
+},
+"91": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 91,
+"depth": 2.0,
+"domain": "Endocrine",
+"name": "Puberty and gonadal disorders (includes PCOS)",
+"type": "Concept"
+},
+"92": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 92,
+"depth": 2.0,
+"domain": "Endocrine",
+"name": "Thyroid, abnormal",
+"type": "Concept"
+},
+"94": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 94,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Abdominal Symptoms",
+"type": "Concept"
+},
+"95": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 95,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Appetite, Poor",
+"type": "Concept"
+},
+"96": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 96,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Constipation",
+"type": "Concept"
+},
+"97": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 97,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Diarrhea",
+"type": "Concept"
+},
+"98": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 98,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Distended/protruding abdomen, bloating",
+"type": "Concept"
+},
+"99": {
+"category": "DISEASE CONCEPTS",
+"category_color": "#4472C4",
+"code_id": 99,
+"depth": 2.0,
+"domain": "Gastrointestinal",
+"name": "Malrotation",
+"type": "Concept"
+}
+}

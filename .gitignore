@@ -1,0 +1,23 @@
+# CDK
+cdk.out/
+cdk.context.json
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+
+# Secrets / local env
+.env
+.env.local
+frontend/.env
+
+# OS
+.DS_Store

@@ -1,0 +1,68 @@
+Annotate concepts related to how the patient's condition affects the caregiver's life. Look for impacts on the caregiver's physical health, emotional state, social life, finances, and daily routine.
+
+Focus on the caregiver's experience, not the patient's condition itself.
+
+Annotate impacts that are explicitly stated OR clearly implied by the caregiver's description. Caregivers often describe their experiences in everyday language — identify the underlying concept even without formal terminology. When in doubt, lean toward annotating with a clear rationale.
+
+WHAT TO LOOK FOR:
+- Caregiver stress, burden, or emotional impact
+- Changes in caregiver's daily life or routine due to caregiving
+- Financial impact on the family or caregivers
+- Caregiver's physical health effects from caregiving
+- Family dynamics and relationship changes
+- Social isolation of caregivers or family members
+- Caregiver's need for support or respite
+- Impact on siblings or other family members
+- Caregiver's work or employment changes
+- Family's emotional responses to the patient's condition
+- Caregiver fatigue or burnout
+- Changes in family roles and responsibilities
+
+WHAT NOT TO ANNOTATE:
+- Impact on the patient themselves (belongs in Individual Impacts)
+- The medical condition itself (belongs in Disease Concepts)
+- Treatments or interventions (belong in Medical Interventions)
+- General environmental factors not specific to caregiver impact
+
+PRECISION: Choose the most specific code that fits. Do not annotate both a general and specific code for the same evidence. If a condition is explicitly denied by the caregiver, do not annotate it.
+
+GUIDELINES:
+1. ONLY look for concepts from the Caregiver Impacts code list (IDs 317-374)
+2. Focus specifically on how caregiving affects the caregiver and family
+3. Extract age information when relevant (caregiver's age or timing of impact)
+4. Extract causality when mentioned (what aspect of the patient's condition caused this caregiver impact)
+5. Provide clear rationale explaining why this is a caregiver/family impact
+6. Identify both explicitly stated and reasonably implied caregiver impacts. When caregivers describe situations that would typically cause burden (like disrupted sleep or tracking developmental delays), ALWAYS code these even if the caregiver doesn't explicitly frame them as difficulties.
+7. Remember that codes 367-374 relate to the Diagnostic Journey and should be used even when they describe medical facts rather than explicit emotional impacts
+8. Recognize that tracking developmental milestones and delays represents a significant caregiver burden
+9. Consider that managing multiple specialists and healthcare providers constitutes a caregiver burden
+10. When in doubt about whether something constitutes a caregiver impact, err on the side of inclusion if it reasonably affects the caregiver's experience
+
+Available codes for Caregiver Impacts:
+{CODEBOOK_HERE}
+
+Return your annotations as a JSON array. Each annotation should have:
+- paragraph_id: the utterance ID
+- sentence_indices: array of sentence numbers (0-indexed)
+- mentioned_verbatim: boolean indicating if the concept was mentioned verbatim. return false if it is inferred from context but not mentioned verbatim
+- concept_id: the concept ID number
+- concept_name: the concept name
+- age: age when mentioned or "n/a"
+- caused_by: array of causing factors or []
+- rationale: explanation focusing on how this specifically impacts the caregiver or family
+
+Example format:
+[
+  {
+    "paragraph_id": "u001",
+    "sentence_indices": [4, 5],
+    "mentioned_verbatim": true,
+    "concept_id": 340,
+    "concept_name": "Caregiver stress",
+    "age": "n/a",
+    "caused_by": ["constant care needs", "sleep disruption"],
+    "rationale": "Caregiver reports feeling overwhelmed and stressed due to the patient's round-the-clock care needs and frequent night wakings"
+  }
+]
+
+If no codes apply, return an empty array `[]`

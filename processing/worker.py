@@ -1,0 +1,171 @@
+import asyncio
+import json
+import os
+import time
+import traceback
+import urllib.parse
+import boto3
+
+sqs = boto3.client("sqs")
+s3 = boto3.client("s3")
+dynamodb = boto3.resource("dynamodb")
+table = dynamodb.Table(os.environ["JOBS_TABLE"])
+
+QUEUE_URL = os.environ["QUEUE_URL"]
+UPLOADS_BUCKET = os.environ["UPLOADS_BUCKET"]
+RESULTS_BUCKET = os.environ["RESULTS_BUCKET"]
+# Present only in the integrated stack. When set, each annotation is also
+# written as a row in the predictions table tagged with the job's category.
+PREDICTIONS_TABLE = os.environ.get("PREDICTIONS_TABLE")
+
+
+def update_job_status(job_id, status, error_message=None, results_key=None):
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    update_expr = "SET #s = :s, updated_at = :u"
+    expr_values = {":s": status, ":u": now}
+    expr_names = {"#s": "status"}
+
+    if error_message:
+        update_expr += ", error_message = :e"
+        expr_values[":e"] = error_message
+    if results_key:
+        update_expr += ", results_key = :r"
+        expr_values[":r"] = results_key
+
+    table.update_item(
+        Key={"job_id": job_id},
+        UpdateExpression=update_expr,
+        ExpressionAttributeNames=expr_names,
+        ExpressionAttributeValues=expr_values,
+    )
+
+
+def write_prediction_rows(job_id, category, interview_id, annotations):
+    """Write each annotation as a row in the predictions table.
+
+    PK = category, SK = "{interview_id}#{idx}" where idx enumerates the
+    annotations in their ORIGINAL ORDER. This matches the legacy positional
+    review key convention ("Caregiver 11_49") so migrated reviews attach to the
+    right prediction. Each row starts PENDING with empty vote lists.
+    """
+    if not (PREDICTIONS_TABLE and category):
+        return
+
+    predictions_table = dynamodb.Table(PREDICTIONS_TABLE)
+    with predictions_table.batch_writer() as batch:
+        for idx, ann in enumerate(annotations):
+            prediction_id = f"{interview_id}#{idx}"
+            item = {
+                "category": category,
+                "prediction_id": prediction_id,
+                "interview_id": interview_id,
+                "idx": idx,
+                "source_job_id": job_id,
+                "concept_id": str(ann.get("concept_id")) if ann.get("concept_id") is not None else None,
+                "concept_name": ann.get("concept_name"),
+                "quote": ann.get("raw_highlight"),
+                "age": ann.get("age") or "n/a",
+                "rationale": ann.get("rationale"),
+                "caused_by": ann.get("caused_by") or [],
+                "paragraph_id": ann.get("paragraph_id"),
+                "status": "PENDING",
+                "approvals": [],
+                "rejections": [],
+                "review_count": 0,
+                "version": 0,
+            }
+            # DynamoDB rejects empty-string values; drop them.
+            item = {k: v for k, v in item.items() if v != ""}
+            batch.put_item(Item=item)
+
+
+async def process_job(job_id, s3_key, filename):
+    from utils.parsers import parse_docx_files
+    from utils.annotation_engine import annotate_with_multi_pass_claude
+    from config import NUM_PASSES
+
+    # Read the category off the job record (set by the upload lambda). The
+    # category lives on the record, not the S3 key, so key parsing is unchanged.
+    job_record = table.get_item(Key={"job_id": job_id}).get("Item") or {}
+    category = job_record.get("category")
+
+    local_path = f"/tmp/{filename}"
+    s3.download_file(UPLOADS_BUCKET, s3_key, local_path)
+
+    update_job_status(job_id, "PROCESSING")
+
+    with open(local_path, "rb") as f:
+        parsed_docs = parse_docx_files([f])
+    annotations = await annotate_with_multi_pass_claude(
+        parsed_docs=parsed_docs,
+        num_passes=NUM_PASSES,
+        scope="doc",
+        selected_doc_id=parsed_docs[0]["doc_id"],
+    )
+
+    results_key = f"results/{job_id}/annotations.json"
+    s3.put_object(
+        Bucket=RESULTS_BUCKET,
+        Key=results_key,
+        Body=json.dumps(annotations, indent=2, default=str),
+        ContentType="application/json",
+    )
+
+    # The interview_id is the uploaded filename without its extension -- this is
+    # what the predictions table and the review key are keyed on.
+    interview_id = os.path.splitext(os.path.basename(filename))[0]
+    write_prediction_rows(job_id, category, interview_id, annotations)
+
+    update_job_status(job_id, "COMPLETED", results_key=results_key)
+    os.remove(local_path)
+
+
+def extract_job_info(message_body):
+    body = json.loads(message_body)
+    for record in body.get("Records", [body]):
+        s3_info = record.get("s3", {})
+        bucket = s3_info.get("bucket", {}).get("name", "")
+        key = urllib.parse.unquote_plus(s3_info.get("object", {}).get("key", ""))
+        if key.startswith("uploads/"):
+            parts = key.split("/")
+            job_id = parts[1]
+            filename = "/".join(parts[2:])
+            return job_id, key, filename
+    return None, None, None
+
+
+def poll_queue():
+    print(f"Worker started, polling {QUEUE_URL}")
+    while True:
+        resp = sqs.receive_message(
+            QueueUrl=QUEUE_URL,
+            MaxNumberOfMessages=1,
+            WaitTimeSeconds=20,
+        )
+
+        messages = resp.get("Messages", [])
+        if not messages:
+            continue
+
+        for msg in messages:
+            job_id, s3_key, filename = extract_job_info(msg["Body"])
+            if not job_id:
+                print(f"Could not parse message: {msg['Body'][:200]}")
+                sqs.delete_message(QueueUrl=QUEUE_URL, ReceiptHandle=msg["ReceiptHandle"])
+                continue
+
+            print(f"Processing job {job_id}: {filename}")
+            try:
+                asyncio.run(process_job(job_id, s3_key, filename))
+                print(f"Job {job_id} completed")
+            except Exception as e:
+                error_msg = f"{type(e).__name__}: {e}"
+                print(f"Job {job_id} failed: {error_msg}")
+                traceback.print_exc()
+                update_job_status(job_id, "FAILED", error_message=error_msg[:500])
+
+            sqs.delete_message(QueueUrl=QUEUE_URL, ReceiptHandle=msg["ReceiptHandle"])
+
+
+if __name__ == "__main__":
+    poll_queue()

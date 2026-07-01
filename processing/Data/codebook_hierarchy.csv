@@ -1,0 +1,544 @@
+Id,Name,Parent Id,Depth,Type
+1,DEMOGRAPHICS,,0,Category
+2,AGE RANGE,,1,Domain
+3,12 to 17 years of age,1.0,2,Concept
+4,18 to 29 years of age,1.0,2,Concept
+5,2 to 4 years of age,1.0,2,Concept
+6,30 years and older,1.0,2,Concept
+7,5 to 11 years of age,1.0,2,Concept
+8,Under 2 years of age,1.0,2,Concept
+9,DISEASE CONCEPTS,,0,Category
+10,Behavior,9.0,1,Domain
+11,Aggression,10.0,2,Concept
+12,Abnormal play,10.0,2,Concept
+13,Autism/Autistic Behavior,10.0,2,Concept
+14,"Consumption Behaviors, Abnormal (Includes changes in eating and/or drinking) ",10.0,2,Concept
+15,Pica,14.0,3,Concept
+16,"Crying, abnormal (includes spontaneous, inconsolable, lack of) ",10.0,2,Concept
+17,Disinhibition,10.0,2,Concept
+18,"Social Behavior, abnormal (Includes inappropriate behavior, overly friendly, physical contact seeking/avoiding, attention seeking, interest in others, emotional immaturity)   ",17.0,3,Concept
+19,"ADHD (includes hyperactivity, ADD)",17.0,3,Concept
+20,Impulsivity,17.0,3,Concept
+21,Excitable,10.0,2,Concept
+22,Lethargy (includes increasing with age),10.0,2,Concept
+23,"Maladaptive behaviors (includes biting, hair'-'pulling, pinching slapping, yelling)",10.0,2,Concept
+24,Mouth stuffing and pocket filling,10.0,2,Concept
+25,"Oppositional behaviors, includes oppositional defiance disorder",10.0,2,Concept
+26,"Repetitive behaviors (includes OCD, hand-wringing, compulsions, rituals, loud repetitive vocalizations)",10.0,2,Concept
+27,"Fixated interest, or atypical interest in or use of objects (such as water, crinkly items, mirrors, reflections, paper, twirling hair, music, outdoors, ceiling fans, vehicles, opening closing doors",26.0,3,Concept
+28,Perseveration (includes repetitive speech/verbalization),26.0,3,Concept
+29,"Sensory behavior, abnormal (sensory-seeking, spinning, eye'-'poking, hair brushing, touching hands)",26.0,3,Concept
+30,"Restlessness (includes agitation, exploratory mobility) ",10.0,2,Concept
+31,"Self'-'Injurious Behavior (include self'-'harm, head banging, trichotillomania, wound picking, skin picking, biting self)",10.0,2,Concept
+32,Temper tantrums,10.0,2,Concept
+33,Cardiorespiratory,9.0,1,Domain
+34,"Cardiac Defect/Structural Abnormality (pulmonary atresia, murmur, mitral valve disease, enlarged, atrial septal defects, arrythmia, murmur, bradycardia, low heart rate)",33.0,2,Concept
+35,"Cardiac Failure (Heart Failure, Hypertrophy, Cardiomyopathy)",33.0,2,Concept
+36,Dystussia (difficulty coughing),33.0,2,Concept
+37,Hypersecretion,33.0,2,Concept
+38,Irregular Heart Rate,33.0,2,Concept
+39,"Blood pressure, abnormal (hypertension, hypotension, high, low)",33.0,2,Concept
+40,"Lower Respiratory Infections, recurrent, includes pneumonia",33.0,2,Concept
+41,"Respiration, Abnormal (Includes Asthma, Hypoxia, Restrictive Airway Disease)",33.0,2,Concept
+42,Apneic Episodes,41.0,3,Concept
+43,"Aspiration, Includes Silent",41.0,3,Concept
+44,Respiratory Distress/Failure,33.0,2,Concept
+45,Structural Respiratory Abnormality (pulmonary atresia),33.0,2,Concept
+46,Syncope (fainting),33.0,2,Concept
+47,"Tonsils/Adenoids, Abnormal",33.0,2,Concept
+48,"Upper Respiratory Infections, recurrent, sinusitus",33.0,2,Concept
+49,Cognition,9.0,1,Domain
+50,Abstract Concepts Difficult ,49.0,2,Concept
+51,Cognitive Decline/Regression,49.0,2,Concept
+52,Memory Challenges,51.0,3,Concept
+53,"Reduced consciousness (includes coma, vegetative state, unconscious)",49.0,2,Concept
+54,"Executive Function Skills, Impaired (logic, planning, time'-'management, organization)",49.0,2,Concept
+55,"Global Developmental Delay (Children < 5, includes Vineland, VABS-3, lower adaptive behavior) ",49.0,2,Concept
+56,Intellectual Disability (includes Cognitive Disability),49.0,2,Concept
+57,Cognitive impairment,49.0,2,Concept
+58,Judgement Impaired: Danger awareness limited,49.0,2,Concept
+59,Memory Enhanced,49.0,2,Concept
+60,Learning disability (includes dyslexia),49.0,2,Concept
+61,Processing Disorder (includes agnosia),49.0,2,Concept
+62,Communication,9.0,1,Domain
+63,Dysarthria,62.0,2,Concept
+64,Echolalia,62.0,2,Concept
+65,Speech Delay,62.0,2,Concept
+66,Expressive Communication Decreased,65.0,3,Concept
+67,"Non-speaking communication through the use of eye contact, facial expression, body postures and gestures",66.0,4,Concept
+68,Verbal Language can be used to Communicate (Includes few words),66.0,4,Concept
+69,Sign language (includes ASL),66.0,4,Concept
+70,Receptive Communication Decreased,65.0,3,Concept
+71,"Speech, Abnormal",65.0,3,Concept
+72,"Speech, Absent (Non-speaking)",65.0,3,Concept
+73,Speech Impediment (includes pronunciation/verbal impairments '-' cerebellar),62.0,2,Concept
+74,Speech Regression,62.0,2,Concept
+75,Strong Desire to Communicate,62.0,2,Concept
+76,"Verbal Approximation, vocalizes but does not have full speech (baba, wawa) ",62.0,2,Concept
+77,Emotional,9.0,1,Domain
+78,"Anxiety (includes panic attacks, social anxiety, separation anxiety)",77.0,2,Concept
+79,Apathy,77.0,2,Concept
+80,"Fear, Abnormal",77.0,2,Concept
+81,Frustration (symptom),77.0,2,Concept
+82,Happy Demeanor (includes Placid/Content),77.0,2,Concept
+83,Irritability,77.0,2,Concept
+84,Mood Swings (includes lack of self'-'regulation),77.0,2,Concept
+85,"Neuropsychiatric Issues (includes suspicion of bipolar, bipolar, hallucinations, catatonia, schizophrenia, depression)",77.0,2,Concept
+86,Endocrine,9.0,1,Domain
+87,Adrenal Gland Abnormality (Includes adrenal insuffiency),86.0,2,Concept
+88,Diabetes type 2,86.0,2,Concept
+89,Growth hormone deficiency,86.0,2,Concept
+90,Premenstrual syndrome (PMS) (includes PMDD),86.0,2,Concept
+91,Puberty and gonadal disorders (includes PCOS),86.0,2,Concept
+92,"Thyroid, abnormal",86.0,2,Concept
+93,Gastrointestinal,9.0,1,Domain
+94,Abdominal Symptoms,93.0,2,Concept
+95,"Appetite, Poor",94.0,3,Concept
+96,Constipation,94.0,3,Concept
+97,Diarrhea,94.0,3,Concept
+98,"Distended/protruding abdomen, bloating",94.0,3,Concept
+99,Malrotation,94.0,3,Concept
+100,"Vomiting, Includes Cyclic",94.0,3,Concept
+101,"Dysmotility (includes slow gastric emptying, neurologic gut, slow motility)",93.0,2,Concept
+102,Esophagitis,93.0,2,Concept
+103,Gagging,93.0,2,Concept
+104,"GI morphology, structure, abnormal",93.0,2,Concept
+105,"Infant Feeding Issues (Includes poor sucking, chewing)",93.0,2,Concept
+106,Leaky Gut (reduced nutrient absorption),93.0,2,Concept
+107,Reflux (Includes GERD),93.0,2,Concept
+108,"Gastrointestinal, other",93.0,2,Concept
+109,Genitourinary ,9.0,1,Domain
+110,"Genital system, abnormal (includes reproductive system, menses, irregular periods, cryptorchidism, torsion)",109.0,2,Concept
+111,"Genitourinary Infections (Includes pyelonephritis, chronic yeast infections, urinary tract infections (UTIs), recurrent UTIs)",109.0,2,Concept
+112,Incontinence (includes bed wetting),109.0,2,Concept
+113,Renal abnormality (includes kidney stones),109.0,2,Concept
+114,"Urinary System, Abnormal (includes bladder atonia, abnormal ureters, urine flow obstruction, structural defects)",109.0,2,Concept
+115,Growth,9.0,1,Domain
+116,Failure to Thrive,115.0,2,Concept
+117,Obesity,115.0,2,Concept
+118,Short stature,115.0,2,Concept
+119,"Tall stature, long limbs",115.0,2,Concept
+120,"Body weight, abnormal (includes overweight, underweight, obesity, weight gain)",115.0,2,Concept
+121,Underweight,115.0,2,Concept
+122,Hearing,9.0,1,Domain
+123,Deafness,122.0,2,Concept
+124,Hearing impariment,122.0,2,Concept
+125,"Hearing test, abnormal",122.0,2,Concept
+126,Otitis/Ear Infections,122.0,2,Concept
+127,Motor,9.0,1,Domain
+128,Apraxia (including of speech),127.0,2,Concept
+129,Fatigue,127.0,2,Concept
+130,"Fine motor skills, Abnormal",127.0,2,Concept
+131,"Gross motor skills, Abnormal",127.0,2,Concept
+132,Motor delay,127.0,2,Concept
+133,Movement Disorder,127.0,2,Concept
+134,Ataxia,132.0,3,Concept
+135,Choreoathetosis (includes chorea and athetosis),132.0,3,Concept
+136,Dyskinesia,132.0,3,Concept
+137,"Dyspraxia, Motor (impaired coordination of movement)",132.0,3,Concept
+138,Gait Abnormality,132.0,3,Concept
+139,"Balance, unsteady ",137.0,4,Concept
+140,Non Ambulatory,137.0,4,Concept
+141,Tremor/Tremulous Movements of Limbs,132.0,3,Concept
+142,"Oral Motor Impairment (Includes tongue thrusting, tongue abnormalities, macroglossia, sucking and swallowing disorders, frequent drooling, excessive chewing, mouthing behaviors, and feeding difficulties, teeth grinding)",127.0,2,Concept
+143,"Paralysis (includes hemiplegia, limb, arm, leg paralysis, no voluntary movement)",127.0,2,Concept
+144,Progressive loss of skills (regression) (includes fine and/or gross motor skills),127.0,2,Concept
+145,Musculoskeletal,9.0,1,Domain
+146,"Craniofacial abnormalities (Includes: skull abnormalities, torticollis, nose abnormalities, midline retraction, abnormal eyebrows, puffy cheeks, long chin, cleft palate, high arched palate, prominent mandible, jaw abn...",144.0,2,Concept
+147,"Dental Abnormalities (Includes abnormal dentition, large front teeth, missing adult teeth)",144.0,2,Concept
+148,"Hands and Feet Abnormalities (includes hypoplastic distal phlanges in the hand and feet, broad hallux phalanx and thumb, proximal placement of thumb, arachnotidactyly fingers, curled fingers, Navicular bone drop,  Cal...",144.0,2,Concept
+149,Hernias,144.0,2,Concept
+150,"Joint Abnormalities (Includes laxity, hypermobility, pain, radial head dislocation, congenital hip dislocation)",144.0,2,Concept
+151,"Poor head control, includes lag",144.0,2,Concept
+152,"Rib and Chest Abnormalities (Includes sternum malformation, wide ribs)",144.0,2,Concept
+153,Skeletal Abnormalities ,144.0,2,Concept
+154,"Fractures, unexplained, fragility",152.0,3,Concept
+155,Hip/Pelvis Abnormalities (Includes bilateral hip dysplasia),152.0,3,Concept
+156,"Long Bone Abnormalities (Includes twisted, shortened tibia and/or fibula)",152.0,3,Concept
+157,"Skeletal Maturation Abnormalities (Includes bone age advanced, bone age delayed, osteoporosis, osteopenia, soft bones)",152.0,3,Concept
+158,"Spine Abnormalities (Includes scoliosis, spina bifida, kyphosis, spinal stenosis, saccral dimple)",152.0,3,Concept
+159,"Spasms and Contractures (Includes contractions, involuntary movement, muscle cramps)",144.0,2,Concept
+160,Ankle pronation (some inward rolling of ankle and foot),158.0,3,Concept
+161,"Stiffness (Includes muscle stiffness, joint stiffness)",144.0,2,Concept
+162,Neurological,9.0,1,Domain
+163,"Cataplexy (Includes with narcolepsy, catatonia)",161.0,2,Concept
+164,Neuropathy (includes peripheral),161.0,2,Concept
+165,Cerebral Palsy,161.0,2,Concept
+166,"Pain sensation, abnormal",161.0,2,Concept
+167,"Cry, Distinctive",161.0,2,Concept
+168,EEG Abnormal,161.0,2,Concept
+169,"Head Circumference, abnormal",161.0,2,Concept
+170,"Macrocephaly, large head circumference",168.0,3,Concept
+171,"Microcephaly, small head circumference, includes primary and secondary",168.0,3,Concept
+172,Hydrocephalus,161.0,2,Concept
+173,"Migraine, headache, frequent",161.0,2,Concept
+174,"Hemiplegic, migraine",172.0,3,Concept
+175,MRI Abnormal,161.0,2,Concept
+176,Agenesis of the Corpus Callosum,174.0,3,Concept
+177,Chiari Malformation,174.0,3,Concept
+178,Corpus Callosum Defects,174.0,3,Concept
+179,Cortical defects,174.0,3,Concept
+180,Delayed myelination,174.0,3,Concept
+181,Progressive brain atrophy/ neurodegeneration,174.0,3,Concept
+182,Ventricle Anomalies (Other),174.0,3,Concept
+183,Proprioception abnormal,161.0,2,Concept
+184,"Reflexes, abnormal (hyporeflexia, hyperreflexia)",161.0,2,Concept
+185,"Seizures (focal, tonic'-'clonic, myoclonic, resistant or progressive seizure type)",161.0,2,Concept
+186,Absence Seizures,184.0,3,Concept
+187,Febrile Seizures,184.0,3,Concept
+188,Focal (Partial) Seizures,184.0,3,Concept
+189,Aware (Simple),187.0,4,Concept
+190,Unaware (Complex),187.0,4,Concept
+191,Infantile Spasms (Includes West Syndrome),184.0,3,Concept
+192,"Intractable Seizures, Refractory",184.0,3,Concept
+193,"Nocturnal Epilepsy (seizures in sleep, night)",184.0,3,Concept
+194,"Postictal Abnormality (Includes regression, extended fatigue)",184.0,3,Concept
+195,Rolandic Seizures (during transition between sleeping and waking),184.0,3,Concept
+196,Status Epilepticus,184.0,3,Concept
+197,Tethered Cord,161.0,2,Concept
+198,"Tone, Abnormal",161.0,2,Concept
+199,Hypertonia ,197.0,3,Concept
+200,Hypotonia (includes open mouth),197.0,3,Concept
+201,"Drooling (includes excessive salivation, sialorrhe)",199.0,4,Concept
+201,Other,9.0,1,Domain
+202,Abnormal Labs,200.0,2,Concept
+203,Autoimmune,200.0,2,Concept
+204,Dysautonomia,200.0,2,Concept
+205,Fevers,200.0,2,Concept
+206,Infection Risk High,200.0,2,Concept
+207,"Neoplasm (Includes tumors, cancer, benign tumors)",200.0,2,Concept
+208,Sepsis,200.0,2,Concept
+209,"Perinatal (prenatal, postnatal, birth)",9.0,1,Domain
+210,"Brain abnormality, prenatal",208.0,2,Concept
+211,Choroid plexus cysts,209.0,3,Concept
+212,"Fetal movement, reduced",208.0,2,Concept
+213,Hydronephrosis,208.0,2,Concept
+214,Premature,208.0,2,Concept
+215,Prenatal Renal Abnormalities (Includes renal obstruction),208.0,2,Concept
+216,"Birth weight, abnormal (includes intrauterine growth restriction (IUGR))",208.0,2,Concept
+217,"Pregnancy complications (includes threatened abortion, gestational diabetes)",208.0,2,Concept
+218,"Fetal physiology, abnormal (includes jaundice, congenital pneumonia)",208.0,2,Concept
+219,Ultrasound Findings,208.0,2,Concept
+220,"Amniotic Fluid, Abnormal (includes Oligohydramnios and Polyhydramnios)",209.0,3,Concept
+221,Skin,9.0,1,Domain
+222,Ecchymosis (Bruises Easily),220.0,2,Concept
+223,Excess Skin ,220.0,2,Concept
+224,"Hair Growth, Abnormal (Hypertrichosis, excess or lack of hair) ",220.0,2,Concept
+225,"Hair Pattern, Abnormal",220.0,2,Concept
+226,Nail Defects ,220.0,2,Concept
+227,"Pigmentation, Abnormal",220.0,2,Concept
+228,"Sensitive Skin/Dermatitis (Includes eczema, psoriasis, rashes, lumps, bumps)",220.0,2,Concept
+229,"Skin Color, Abnormal (Includes flushing, circulation issues, lacy pattern, mottling)",220.0,2,Concept
+230,"Sweating, Abnormal (Includes absent or reduced sweating, hyperhidrosis)",220.0,2,Concept
+231,"Temperature Regulation, Poor (Includes hot and cold sensitivity)",220.0,2,Concept
+232,Sleep,9.0,1,Domain
+233,Circadian Abnormalities (sleep wake cycle in 24 hours),231.0,2,Concept
+234,Disorientation (Includes when aroused),231.0,2,Concept
+235,Drowsiness ,231.0,2,Concept
+236,EEG Abnormal During Sleep,231.0,2,Concept
+237,"Initiation and Maintenance Difficulties of Sleep (Includes dyssomnia, restlessness, need for physical proximity to caregiver)",231.0,2,Concept
+238,Narcolepsy/Excessive Daytime Sleepiness,231.0,2,Concept
+239,Restless Legs,231.0,2,Concept
+240,Sleep Apnea (Includes snoring),231.0,2,Concept
+241,"Sleep Duration, Abnormal",231.0,2,Concept
+242,Parasomnia (includes sleepwalking),231.0,2,Concept
+243,SUDEP (seizure in sleep causing death),231.0,2,Concept
+244,Teeth Grinding (includes when awake bruxism),231.0,2,Concept
+245,"Terrors, night terrors (unable to describe)",231.0,2,Concept
+246,Visual,9.0,1,Domain
+247,Alacrima (absent tears),245.0,2,Concept
+248,Amblyopia (Includes lazy eye),245.0,2,Concept
+249,Blindness,245.0,2,Concept
+250,Cataracts,245.0,2,Concept
+251,Cortical Visual Impairment (Includes suspected but not proven),245.0,2,Concept
+252,"Eye Movement, Abnormal (includes dystonic)",245.0,2,Concept
+253,"Nystagmus (Includes Nystagmus'-'like, opsoclonus'-'like eye movement issue, aberrant gaze saccades)",251.0,3,Concept
+254,Oculogyric Crisis ,251.0,3,Concept
+255,"Eye, Anatomical Abnormalities (includes epicanthic folds, downslanting palpebral fissures, asymetrical ptosis, puffy eyelids, long eyelashes)",245.0,2,Concept
+256,Light Sensitivity (photosensitive),245.0,2,Concept
+257,"Optic Nerve Abnormality (includes atrophy, hypoplasia)",245.0,2,Concept
+258,"Strabismus (includes abnormal eye movements, tracking difficulties, exotropia)",245.0,2,Concept
+259,"Visual Impairment (includes peripheral vision loss, nearsightedness, farsightedness, needs glasses)",245.0,2,Concept
+260,Visual'-'Spatial Issues (Includes depth perception),245.0,2,Concept
+261,INDIVIDUAL IMPACTS,,0,Category
+262,Distal Impacts,260.0,1,Domain
+263,Education Impact,261.0,2,Concept
+264,Absenteeism,262.0,3,Concept
+265,"Academic Support Needed, IEP, Individualized Education Plan",262.0,3,Concept
+266,Curriculum Adaptations,264.0,4,Concept
+267,Diet '-' specialized implementation necessary ,264.0,4,Concept
+268,Educational Setting Restricted ,264.0,4,Concept
+269,"Nursing, in'-'school",264.0,4,Concept
+270,Shortened school day,264.0,4,Concept
+271,"Literacy and/or writing, severely delayed",262.0,3,Concept
+272,Social and Family Impact,261.0,2,Concept
+273,"Behaviors are challenging in social situations, such as yelling, stubbornness, demanding, or withdrawn",271.0,3,Concept
+274,"Communication, difficult to be understood outside the family",271.0,3,Concept
+275,"Engaged socially (Capable of social engagement, establishing intentional relationships)",271.0,3,Concept
+276,Extracurricular activities require adaptations,271.0,3,Concept
+277,"Impulsive or Inappropriate social behavior (may greet people with grabbing, overly friendly)",271.0,3,Concept
+278,"Laughter, Inappropriate (not typical social context)",271.0,3,Concept
+279,Law enforcement encounters - includes security guards and police (individual impact),271.0,3,Concept
+280,"Navigating new environments, needs assistance",271.0,3,Concept
+281,"Safety (cross street, elopement, burn risk), Judgement Impaired, Danger Awareness Decreased",271.0,3,Concept
+282,"Sibling relationships, typical",271.0,3,Concept
+283,"Social isolation (includes isolation because of treatments, inability to communicate, inability to move)",271.0,3,Concept
+284,Sports or Play with others (difficult or impossible),271.0,3,Concept
+285,"Transitioning issues (difficulty adapting to change, routine needed, rigid behavior)",271.0,3,Concept
+286,Work Impact,261.0,2,Concept
+287,"Work, Difficult or Impossible",285.0,3,Concept
+288,"Work, Reduced Schedule ",285.0,3,Concept
+289,Proximal Impacts,260.0,1,Domain
+290,Health Impact (individual impact),288.0,2,Concept
+291,"Appointments, Frequent (individual impact)",289.0,3,Concept
+292,"Hospitalizations, Frequent (individual impact)",289.0,3,Concept
+293,ICU,291.0,4,Concept
+294,NICU,291.0,4,Concept
+295,Overall Health Impaired,289.0,3,Concept
+296,Cancer Risk Increased,294.0,4,Concept
+297,Falls,294.0,4,Concept
+298,Mortality Risk Increased,294.0,4,Concept
+299,Pain,294.0,4,Concept
+300,Resuscitation Needed,294.0,4,Concept
+301,Severely Ill,294.0,4,Concept
+302,Suffering,294.0,4,Concept
+303,Perinatal,289.0,3,Concept
+304,"Surgical/Medical Interventions, Necessary, Frequent",289.0,3,Concept
+305,Self Care and Daily Living Impact,288.0,2,Concept
+306,Activities of Daily Living (ADL): Requires 100% Support  ,304.0,3,Concept
+307,Assistance with Activities of Daily Living (ADL): Requires Partial Support,304.0,3,Concept
+308,Assisted Living Facility (ALF),304.0,3,Concept
+309,Bathing assistance needed (includes all hygiene),304.0,3,Concept
+310,Dressing assistance needed,304.0,3,Concept
+311,Eating and drinking assistance needed,304.0,3,Concept
+312,Following complex directions,304.0,3,Concept
+313,Household tasks assistance needed (includes preparing food),304.0,3,Concept
+314,Mobility assistance needed,304.0,3,Concept
+315,Regression in Activities of Daily Living (ADL),304.0,3,Concept
+316,Toileting assistance needed,304.0,3,Concept
+317,CAREGIVER IMPACTS,,0,Category
+318,Caregiver and Family Burden,316.0,1,Domain
+319,Caregiver Effort Requirement,317.0,2,Concept
+320,"Advocacy Role, advocacy for patient provided by caregiver",318.0,3,Concept
+321,"Appointments, frequent (caregiver impact)",318.0,3,Concept
+322,Diagnostic odyssey,318.0,3,Concept
+323,"Hospitalizations, frequent (caregiver impact)",318.0,3,Concept
+324,"Medical Care'-' medical interventions must be provided by caregiver and family members(medications, bowl wash out, chest physio, etc.)",318.0,3,Concept
+325,"Time needed for care (e.g. feeding, morning & bedtime routines, organization of medical care)",318.0,3,Concept
+326,Daily Living Impacts,317.0,2,Concept
+327,Formal Support System Needed,325.0,3,Concept
+328,Family members,326.0,4,Concept
+329,Government Assistance,326.0,4,Concept
+330,Nursing 24 hr,326.0,4,Concept
+331,Other Caregivers,326.0,4,Concept
+332,Respite,326.0,4,Concept
+333,"Household tasks (difficult to complete), includes caring for other children",325.0,3,Concept
+334,Emotional Impact,317.0,2,Concept
+335,Anxiety and stress,333.0,3,Concept
+336,Denial,333.0,3,Concept
+337,Depression and sadness,333.0,3,Concept
+338,Embarrassment (managing behavior of child in public),333.0,3,Concept
+339,Fear,333.0,3,Concept
+340,Frustration (caregiver impact),333.0,3,Concept
+341,Grief Reaction,333.0,3,Concept
+342,Guilt,333.0,3,Concept
+343,"Impact on intimate relationship, marital strain, divorce",333.0,3,Concept
+344,Post-traumatic stress disorder (PTSD),333.0,3,Concept
+345,Resentment,333.0,3,Concept
+346,"Substance abuse, includes alcoholism",333.0,3,Concept
+347,Vigilance and flexibility needed to care for child,333.0,3,Concept
+348,Financial Impact,317.0,2,Concept
+349,Destruction of possessions by child,347.0,3,Concept
+350,Financial burden,347.0,3,Concept
+351,Home or vehicle modifications,347.0,3,Concept
+352,"Work, reduced capacity",347.0,3,Concept
+353,Health Impact (caregiver impact),317.0,2,Concept
+354,"Fatigue, exhaustion",352.0,3,Concept
+355,"Injuries (risk of falling and increased injuries due to assisting younger children exploratory behaviors, impulse control)",352.0,3,Concept
+356,"Medical and therapy appointments for parents increased due to issues caused by child's disorder (injuries, psychiatric)",352.0,3,Concept
+357,"Sleep, disrupted",352.0,3,Concept
+358,Reproductive/Family Planning,317.0,2,Concept
+359,Social Impacts,317.0,2,Concept
+360,"Independence, mobility, and agency decreased due to child's need for daily care",358.0,3,Concept
+361,Law enforcement encounters - includes security guards and police (caregiver impact),358.0,3,Concept
+362,"Privacy, Loss of",358.0,3,Concept
+363,Siblings and family impacted,358.0,3,Concept
+364,"Social Isolation, Loneliness",358.0,3,Concept
+365,Socialization and leisure activities reduced or modified,358.0,3,Concept
+366,Stigma,358.0,3,Concept
+367,Diagnostic Journey,316.0,1,Domain
+368,Age of Diagnosis,403.0,2,Concept
+369,Challenges,403.0,2,Concept
+370,Genetic testing,403.0,2,Concept
+371,Initial Diagnosis (misdiagnosis),403.0,2,Concept
+372,Initial Symptoms,403.0,2,Concept
+373,Medical Provider,403.0,2,Concept
+374,Missed Milestones,403.0,2,Concept
+376,MODIFYING FACTORS,,0,Category
+377,Access Modifier,366.0,1,Domain
+378,"Adaptive equipment (includes technology, like AAC devices and zoom/telehealth)",367.0,2,Concept
+379,Alternative Treatments Available,367.0,2,Concept
+380,"Cleaner, Landscaper, Chef, Personal Assistant, Gardener, Dog Walker",367.0,2,Concept
+381,Educator (In Home),367.0,2,Concept
+382,Early Intervention Program,367.0,2,Concept
+383,Healthcare Provider and Appointment Access ,367.0,2,Concept
+384,"In home medical care (nurses, therapies)",367.0,2,Concept
+385,Information/Knowledge,367.0,2,Concept
+386,Diagnosis Identified,375.0,3,Concept
+387,Education of parent,375.0,3,Concept
+388,Lack of information on disorder,375.0,3,Concept
+389,Insurance,367.0,2,Concept
+390,"Legal assistance, child advocate",367.0,2,Concept
+391,"Regional differences in access to services, insurance and medical care",367.0,2,Concept
+392,Respite care,367.0,2,Concept
+393,"Treatment for family members (anxiety medication, counseling)",367.0,2,Concept
+394,Family and Community Support Modifer,366.0,1,Domain
+395,"Community via facebook, foundation and support groups",384.0,2,Concept
+396,"Supportive Community, including School",384.0,2,Concept
+397,"Research, participation",386.0,3,Concept
+398,Supportive family,384.0,2,Concept
+399,Health Support Modifier,366.0,1,Domain
+400,Bereavement counseling,389.0,2,Concept
+401,Hospice,389.0,2,Concept
+402,Multidisciplinary Care,389.0,2,Concept
+403,Palliative Care,389.0,2,Concept
+404,Shared Decision Making,389.0,2,Concept
+405,Pandemic (COVID),366.0,1,Domain
+406,Resilience Modifier,366.0,1,Domain
+407,Coping strategies (caregivers),396.0,2,Concept
+408,Spiritual beliefs,396.0,2,Concept
+409,Severity of Symptoms (includes Seizure control),366.0,1,Domain
+410,Menses-related modification of symptoms,409.0,2,Concept
+411,Work Modifier,366.0,1,Domain
+412,Job flexiblity and financial resources,400.0,2,Concept
+413,Professional Expertise of parent/caregivers,400.0,2,Concept
+414,MEDICAL INTERVENTIONS,,0,Category
+415,Adaptive or Special Equipment Required,414.0,1,Domain
+416,Alternative and/or Augmentative Communication Devices Used,415.0,2,Concept
+417,Hearing Aids,415.0,2,Concept
+418,Mobility Equipment,415.0,2,Concept
+419,"AFOs '-' angle foot orhosis, orthotics",415.0,3,Concept
+420,Service Animal,415.0,3,Concept
+421,"Standers, standing frame",415.0,3,Concept
+422,Wheelchair,415.0,3,Concept
+423,Sleep positioning,415.0,2,Concept
+424,Dietary,414.0,1,Domain
+425,Gluten Free,424.0,2,Concept
+426,IV Nutrition/Fluids (TPN),424.0,2,Concept
+427,Ketogenic diet,424.0,2,Concept
+428,"Lactose, dairy free",424.0,2,Concept
+429,"Tube fed (PEG, NG, etc)",424.0,2,Concept
+430,Experimental Therapies,414.0,1,Domain
+431,"Medical Intervention, Home",414.0,1,Domain
+432,Bowel Wash Out,431.0,2,Concept
+433,Catheterization,431.0,2,Concept
+434,Respiratory care at home (Other),431.0,2,Concept
+435,"Sanitary Measure, Excessive Needed to Prevent Infection",431.0,2,Concept
+436,Suctioning,431.0,2,Concept
+437,Medication Intervention,414.0,1,Domain
+438,"albuterol, levalbuterol, ProAir, Proventil, Ventolin, Xopenex",437.0,2,Concept
+439,"amphetamine salts, Adderall",437.0,2,Concept
+440,Anti'-'diarrheal medications (unspecified),437.0,2,Concept
+441,Antibiotics,437.0,2,Concept
+442,"aripiprazole, Ability, Aristada",437.0,2,Concept
+443,"atomoxetine, Strattera",437.0,2,Concept
+444,atropine,437.0,2,Concept
+445,Behavioral modifying medications (unspecified),437.0,2,Concept
+446,Bowel treatment medications (unspecified),437.0,2,Concept
+447,"budesonide, Pulmicort, Airsupra",437.0,2,Concept
+448,"bupropion, Wellbutrin",437.0,2,Concept
+449,"cannabidiol, Epidiolex",437.0,2,Concept
+450,"CBD with or without THC, Jayden's Juice, Charlotte's web, (non'-'FDA approved)",437.0,2,Concept
+451,Chemotherapy,437.0,2,Concept
+452,"clobazam, Onfi",437.0,2,Concept
+453,"clonazepam, Klonopin",437.0,2,Concept
+454,"clonidine, Catapress, Kapvay, Onyda XR",437.0,2,Concept
+455,"CoQ10, Qunol, Coenzyme Q10",437.0,2,Concept
+456,"diazepam, Diastat Rectal Gel, Valtoco nasal spray, Valium",437.0,2,Concept
+457,"docusate, Colace, stool softner",437.0,2,Concept
+458,"duloxetine, Cymbalta",437.0,2,Concept
+459,Emotional modifying medications (unspecified),437.0,2,Concept
+460,Enemas,437.0,2,Concept
+461,"Erythromycin, E.E.S",437.0,2,Concept
+462,"escitalopram, Lexapro",437.0,2,Concept
+463,"esomeprazole, Nexium",437.0,2,Concept
+464,"famotadine, Pepcid",437.0,2,Concept
+465,"fenfluramine, Fintepla",437.0,2,Concept
+466,"fluoextine, Prozac",437.0,2,Concept
+467,"fluticasone, Flovent, Advair",437.0,2,Concept
+468,"gabapentin, Neurontin, Gralise",437.0,2,Concept
+469,"glycerol, suppositories",437.0,2,Concept
+470,"glycopyrrolate, Robinul",437.0,2,Concept
+471,Growth Hormone,437.0,2,Concept
+472,"guanfacine, Intuniv",437.0,2,Concept
+473,Hypersecretion/Hyperhidrosis/Hypersalivation medications (unspecified),437.0,2,Concept
+474,Inhalers or Nebulizers (unspecified),437.0,2,Concept
+475,"ipratropium, Atrovent",437.0,2,Concept
+476,"Lacosamide, Vimpat",437.0,2,Concept
+477,"lamotrigine, Lamictal",437.0,2,Concept
+478,"lansoprazole, Prevacid",437.0,2,Concept
+479,Laxatives (unspecified),437.0,2,Concept
+480,"Levetiracetum, Keppra",437.0,2,Concept
+481,"lisdexamfetamine, Vyvanse",437.0,2,Concept
+482,"loperamide, Imodium",437.0,2,Concept
+483,"lorazepam, Ativan",437.0,2,Concept
+484,"Medical Aid in Dying, Euthansia",437.0,2,Concept
+485,Melatonin,437.0,2,Concept
+486,"methylphenidate, Ritalin, Concerta",437.0,2,Concept
+487,"midazolam, Nayzilam, nasal spray",437.0,2,Concept
+488,"mometasone, Dulera, Asmanex",437.0,2,Concept
+489,"olanzapine, Zyprexa, Zyprexa Zydis",437.0,2,Concept
+490,"omega 3s, fish oil, DHA, EPA",437.0,2,Concept
+491,"omeprazole, Prilosec",437.0,2,Concept
+492,"ondansetron, Zofran",437.0,2,Concept
+493,"opioids, oxycodone, fentanyl, morphine, hydrocodone, hydromorphone Percocet, Oxycontin, Lortab, Vicodin, Dilaudid",437.0,2,Concept
+494,Oxygen,437.0,2,Concept
+495,Pain medication (unspecified),437.0,2,Concept
+496,"pantoprazole, Protonix",437.0,2,Concept
+497,"polyethylene glycol 3350, PEG, Miralax",437.0,2,Concept
+498,"pregabalin, Lyrica",437.0,2,Concept
+499,Probiotics,437.0,2,Concept
+500,"psyllium, fiber, Metamucil",437.0,2,Concept
+501,"quetiapine, Seroquel",437.0,2,Concept
+502,"Reflux, stomach, chronic vomitting, dymotility medication (unspecified)",437.0,2,Concept
+503,Rescue seizure medications (unspecified),437.0,2,Concept
+504,Respiratory medications (unspecified),437.0,2,Concept
+505,"risperidone, Risperdal, Risperdal Consta",437.0,2,Concept
+506,"rufinamide, Banzel",437.0,2,Concept
+507,"scopolamine, Patch, Transdermal, Transderm Scop",437.0,2,Concept
+508,Seizure medications (unspecified),437.0,2,Concept
+509,"sennosides, bisacodyl, Senna, Dulcolax, stimulant laxatives",437.0,2,Concept
+510,"sertraline, Zoloft",437.0,2,Concept
+511,Sleep medications (unspecified),437.0,2,Concept
+512,Supplements (unspecified),437.0,2,Concept
+513,"THC, marijuana",437.0,2,Concept
+514,"tramadol, Ultram",437.0,2,Concept
+515,"valproic acid, VPA, depakene, Depekote, Divalproex",437.0,2,Concept
+516,"venlafaxine, Effexor",437.0,2,Concept
+517,"ziprasidone, Geodon",437.0,2,Concept
+518,"zonisamide, Zonegran",437.0,2,Concept
+519,Side Effects,414.0,1,Domain
+520,"Surgical/Medical Interventions, in Hospital, Office, or Clinic",414.0,1,Domain
+521,"tympanostomy tube, ear tubes",520.0,2,Concept
+522,Casting Feet,520.0,2,Concept
+523,Colostomy,520.0,2,Concept
+524,Vagal Nerve Stimulator,520.0,2,Concept
+525,Therapies Required,414.0,1,Domain
+526,Applied Behavior Analysis (ABA),525.0,2,Concept
+527,Aqua,525.0,2,Concept
+528,Behavioral Therapy,525.0,2,Concept
+529,Chest physio,525.0,2,Concept
+530,Counseling,525.0,2,Concept
+531,Dietician,525.0,2,Concept
+532,Hippotherapy (Horse),525.0,2,Concept
+533,Intensive Therapies Program (includes NAPA),525.0,2,Concept
+534,Phototherapy (includes for jaundice),525.0,2,Concept
+535,"Massage, chiropractor",525.0,2,Concept
+536,Multisensory Impairment Therapy,525.0,2,Concept
+537,Music therapy,525.0,2,Concept
+538,Oral sucking training (including feeding training),525.0,2,Concept
+539,Occupational therapy (OT),525.0,2,Concept
+540,"Play therapy (developmental therapy, neuropsychomotricity, psychomotrocity, psychomotor therapy)",525.0,2,Concept
+541,Physical therapy (PT),525.0,2,Concept
+542,Speech,525.0,2,Concept
+543,Vision,525.0,2,Concept
