@@ -78,6 +78,31 @@ aws cognito-idp admin-create-user \
 
 Open the CloudFront URL and sign in.
 
+## 7. (Optional) Migrate existing review data
+A fresh deploy comes up with empty tables. If you are carrying over predictions
+and reviews from a previous deployment, use `scripts/migrate_legacy_data.py`.
+The interview transcripts and reviews are **not** in this repo (they are not
+public data); they are delivered separately as a snapshot directory containing
+`interview_results/*.json` and `reviews.json`.
+
+The migration is additive and reads only from the snapshot copy -- it never
+touches any source system. Always dry-run first to confirm every review attaches
+to a prediction before writing anything:
+```bash
+# validate offline, write nothing, no AWS calls:
+python scripts/migrate_legacy_data.py --snapshot <SNAPSHOT_DIR> --dry-run
+
+# then write into the deployed table (name = PredictionsTableOutput):
+export AWS_DEFAULT_REGION=<REGION>
+python scripts/migrate_legacy_data.py \
+  --snapshot <SNAPSHOT_DIR> \
+  --category P8 \
+  --table <PredictionsTableOutput>
+```
+The dry-run prints a summary (rows, status counts, and any `unmatched_reviews`).
+If `unmatched_reviews` or `unparseable_review_keys` is nonzero it exits without
+writing -- fix the snapshot before running the real migration.
+
 ## Notes
 - The Fargate service runs at `desired_count=0` and only scales up when jobs are
   queued, so it costs nothing while idle.
