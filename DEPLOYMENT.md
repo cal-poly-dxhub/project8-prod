@@ -92,13 +92,17 @@ to a prediction before writing anything:
 # validate offline, write nothing, no AWS calls:
 python scripts/migrate_legacy_data.py --snapshot <SNAPSHOT_DIR> --dry-run
 
-# then write into the deployed table (name = PredictionsTableOutput):
+# then write into the deployed tables (names from the stack outputs):
 export AWS_DEFAULT_REGION=<REGION>
 python scripts/migrate_legacy_data.py \
   --snapshot <SNAPSHOT_DIR> \
   --category P8 \
-  --table <PredictionsTableOutput>
+  --table <PredictionsTableOutput> \
+  --categories-table <CategoriesTableOutput>
 ```
+Pass `--categories-table` so the category is registered and appears in the UI
+selector. Without it the predictions are written but stay invisible in the app,
+because the category dropdown lists only what exists in the categories table.
 The dry-run prints a summary (rows, status counts, and any `unmatched_reviews`).
 If `unmatched_reviews` or `unparseable_review_keys` is nonzero it exits without
 writing -- fix the snapshot before running the real migration.

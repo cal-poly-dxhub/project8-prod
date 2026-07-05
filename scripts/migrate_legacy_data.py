@@ -24,9 +24,10 @@ Usage:
   # validate everything offline, write nothing:
   python migrate_legacy_data.py --snapshot ~/Downloads/p8-ec2-latest --dry-run
 
-  # actually write into the deployed table (get the name from the stack output):
+  # actually write into the deployed table (get the names from the stack outputs):
   python migrate_legacy_data.py --snapshot ~/Downloads/p8-ec2-latest \\
-      --table P8IntegratedStack-PredictionsTableXXXX --category P8
+      --table P8IntegratedStack-PredictionsTableXXXX \\
+      --categories-table P8IntegratedStack-CategoriesTableXXXX --category P8
 """
 import argparse
 import glob
@@ -160,15 +161,31 @@ def build_rows(interviews, reviews, category):
     return rows, stats
 
 
-def write_rows(rows, table_name):
+def _dynamodb():
     import boto3
     # Region resolves from AWS_REGION/AWS_DEFAULT_REGION, else falls back to the
     # stack's default so the script works even when the env var is unset.
     region = os.environ.get("AWS_REGION") or os.environ.get("AWS_DEFAULT_REGION") or "us-west-2"
-    table = boto3.resource("dynamodb", region_name=region).Table(table_name)
+    return boto3.resource("dynamodb", region_name=region)
+
+
+def write_rows(rows, table_name):
+    table = _dynamodb().Table(table_name)
     with table.batch_writer() as batch:
         for row in rows:
             batch.put_item(Item=row)
+
+
+def register_category(categories_table_name, category):
+    """Register the category so the UI's category selector shows it. Without
+    this row the migrated predictions exist but are invisible in the app, since
+    GET /categories lists only what is in the categories table."""
+    table = _dynamodb().Table(categories_table_name)
+    table.put_item(Item={
+        "category": category,
+        "created_by": "legacy-migration",
+        "created_at": "1970-01-01T00:00:00Z",
+    })
 
 
 def main():
@@ -178,6 +195,9 @@ def main():
                    help="dir holding interview_results/ and reviews.json")
     p.add_argument("--category", default="P8", help="category label for all rows")
     p.add_argument("--table", help="predictions table name (required unless --dry-run)")
+    p.add_argument("--categories-table",
+                   help="categories table name; registers the category so it "
+                        "appears in the UI selector (recommended)")
     p.add_argument("--dry-run", action="store_true",
                    help="validate + report only, write nothing, no AWS calls")
     args = p.parse_args()
@@ -207,6 +227,14 @@ def main():
 
     print(f"\nWriting {len(rows)} rows to {args.table} ...")
     write_rows(rows, args.table)
+
+    if args.categories_table:
+        print(f"Registering category '{args.category}' in {args.categories_table} ...")
+        register_category(args.categories_table, args.category)
+    else:
+        print("\nWARNING: --categories-table not given. The predictions were "
+              "written but the category will NOT show in the UI selector until "
+              "it exists in the categories table.", file=sys.stderr)
     print("Done.")
 
 
