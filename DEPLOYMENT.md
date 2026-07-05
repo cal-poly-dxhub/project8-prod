@@ -10,8 +10,13 @@ This deploys the P8 Annotation Pipeline into an AWS account with CDK. See
   calls Anthropic Claude models through the Converse API.
 - Node.js 18 or later, plus npm
 - Python 3.11 or later
-- Docker, since CDK builds the Fargate worker image locally
-- The AWS CDK v2 CLI (`npm i -g aws-cdk`)
+- Docker, **running**, since CDK builds the Fargate worker image locally. Start
+  Docker Desktop (or your daemon) before deploying or bootstrap/deploy will fail.
+- The AWS CDK v2 CLI, **version 2.1129.0 or later**. The app pins a recent
+  `aws-cdk-lib`, whose cloud-assembly schema an older CLI cannot read (you would
+  see a "Cloud assembly schema version mismatch" error). Install a matching CLI
+  with `npm i -g aws-cdk@latest`, or run every `cdk` command below through
+  `npx -y aws-cdk@2.1129.0 ...` without a global install.
 
 ## 1. Install dependencies
 ```bash
@@ -23,6 +28,14 @@ cd frontend && npm install && cd ..       # frontend deps
 ```bash
 cdk bootstrap aws://<ACCOUNT_ID>/<REGION>
 ```
+If bootstrap fails complaining that an existing `cdk-hnb659fds-*` role needs a
+`Retain` deletion policy, the account has leftover state from an earlier
+half-finished bootstrap. Delete the stuck `CDKToolkit` stack and the orphaned
+role, then re-run:
+```bash
+aws cloudformation delete-stack --stack-name CDKToolkit --region <REGION>
+aws iam delete-role --role-name cdk-hnb659fds-cfn-exec-role-<ACCOUNT_ID>-<REGION>
+```
 
 ## 3. Deploy the stack
 The account and region resolve from CDK context first, then env vars, then your
@@ -31,7 +44,8 @@ CLI credentials, with a default region of `us-west-2`. The simplest form:
 cdk deploy P8IntegratedStack -c account=<ACCOUNT_ID> -c region=<REGION>
 ```
 When it succeeds, note the stack **outputs**: `CloudFrontURLOutput`,
-`ApiURLOutput`, `UserPoolIdOutput`, and `UserPoolClientIdOutput`.
+`ApiURLOutput`, `UserPoolIdOutput`, `UserPoolClientIdOutput`, and
+`FrontendBucketOutput`.
 
 ## 4. Configure and build the frontend
 ```bash
@@ -45,11 +59,11 @@ npm run build
 ```
 
 ## 5. Publish the frontend
-Sync the build to the frontend bucket, then invalidate CloudFront. Get the
-bucket name from the stack (it is the CloudFront origin) and the distribution id
-from the CloudFront console or CLI:
+Sync the build to the frontend bucket (`FrontendBucketOutput` from the stack),
+then invalidate CloudFront. Get the distribution id from the CloudFront console
+or CLI:
 ```bash
-aws s3 sync dist/ s3://<FRONTEND_BUCKET> --delete
+aws s3 sync dist/ s3://<FrontendBucketOutput> --delete
 aws cloudfront create-invalidation --distribution-id <DIST_ID> --paths "/*"
 ```
 

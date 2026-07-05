@@ -162,7 +162,10 @@ def build_rows(interviews, reviews, category):
 
 def write_rows(rows, table_name):
     import boto3
-    table = boto3.resource("dynamodb").Table(table_name)
+    # Region resolves from AWS_REGION/AWS_DEFAULT_REGION, else falls back to the
+    # stack's default so the script works even when the env var is unset.
+    region = os.environ.get("AWS_REGION") or os.environ.get("AWS_DEFAULT_REGION") or "us-west-2"
+    table = boto3.resource("dynamodb", region_name=region).Table(table_name)
     with table.batch_writer() as batch:
         for row in rows:
             batch.put_item(Item=row)

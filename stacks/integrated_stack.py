@@ -365,6 +365,7 @@ class IntegratedStack(Stack):
         CfnOutput(self, "ApiURLOutput", value=api.url)
         CfnOutput(self, "UserPoolIdOutput", value=user_pool.user_pool_id)
         CfnOutput(self, "UserPoolClientIdOutput", value=user_pool_client.user_pool_client_id)
+        CfnOutput(self, "FrontendBucketOutput", value=frontend_bucket.bucket_name)
         CfnOutput(self, "UploadsBucketOutput", value=uploads_bucket.bucket_name)
         CfnOutput(self, "ResultsBucketOutput", value=results_bucket.bucket_name)
         CfnOutput(self, "PredictionsTableOutput", value=predictions_table.table_name)
