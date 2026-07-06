@@ -23,6 +23,20 @@ const STATUS_LABEL: Record<string, string> = {
   PII_REVIEW: "Review needed",
 };
 
+// Order the status tracker chips appear in, so the summary reads left-to-right
+// through the lifecycle rather than in whatever order jobs happen to arrive.
+const TRACKER_ORDER = [
+  "UPLOADING",
+  "PROCESSING",
+  "PII_REVIEW",
+  "COMPLETED",
+  "FAILED",
+  "CANCELLED",
+] as const;
+
+// How many of the most recent jobs the tracker summarizes and lists.
+const RECENT_LIMIT = 10;
+
 // PII entity type -> plain-language label for the reupload prompt.
 const PII_LABEL: Record<string, string> = {
   NAME: "name",
@@ -85,10 +99,35 @@ export default function JobList({ onSelectJob, selectedJobId }: Props) {
     );
   }
 
+  // Jobs arrive newest-first from the API; show only the most recent handful
+  // and summarize their statuses in the tracker header.
+  const recent = jobs.slice(0, RECENT_LIMIT);
+  const counts = recent.reduce<Record<string, number>>((acc, job) => {
+    acc[job.status] = (acc[job.status] ?? 0) + 1;
+    return acc;
+  }, {});
+
   return (
     <Card className="overflow-hidden">
       <div className="border-b border-slate-200 px-6 py-4">
-        <h2 className="text-base font-semibold text-slate-800">Your Jobs</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="text-base font-semibold text-slate-800">
+            Recent jobs
+            <span className="ml-2 text-sm font-normal text-slate-400">
+              {jobs.length > RECENT_LIMIT
+                ? `showing ${RECENT_LIMIT} of ${jobs.length}`
+                : `${jobs.length} total`}
+            </span>
+          </h2>
+          <span className="text-xs text-slate-400">Auto-refreshing</span>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {TRACKER_ORDER.filter((s) => counts[s]).map((s) => (
+            <Badge key={s} tone={STATUS_TONE[s] ?? "slate"}>
+              {(STATUS_LABEL[s] ?? s)}: {counts[s]}
+            </Badge>
+          ))}
+        </div>
       </div>
       <table className="w-full text-sm">
         <thead>
@@ -100,7 +139,7 @@ export default function JobList({ onSelectJob, selectedJobId }: Props) {
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-100">
-          {jobs.map((job) => (
+          {recent.map((job) => (
             <Fragment key={job.job_id}>
             <tr
               onClick={() => onSelectJob(job.job_id)}
