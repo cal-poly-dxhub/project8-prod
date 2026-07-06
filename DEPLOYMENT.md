@@ -67,16 +67,41 @@ aws s3 sync dist/ s3://<FrontendBucketOutput> --delete
 aws cloudfront create-invalidation --distribution-id <DIST_ID> --paths "/*"
 ```
 
-## 6. Create a reviewer login
-Self-signup is turned off, so create a user directly in the Cognito user pool:
+## 6. Create and manage user logins
+Self-signup is turned off (`AllowAdminCreateUserOnly`), so there is no public
+"sign up" page. An administrator creates every user directly in the Cognito user
+pool, and the same applies to adding users later or resetting a password. The
+username is the user's email address. Do this from the CLI or the AWS console.
+
+### CLI: create a user with a password they can use right away
 ```bash
 aws cognito-idp admin-create-user \
   --user-pool-id <UserPoolIdOutput> \
   --username reviewer@example.com \
-  --temporary-password '<TempPass123!>'
-```
+  --user-attributes Name=email,Value=reviewer@example.com Name=email_verified,Value=true \
+  --message-action SUPPRESS
 
-Open the CloudFront URL and sign in.
+aws cognito-idp admin-set-user-password \
+  --user-pool-id <UserPoolIdOutput> \
+  --username reviewer@example.com \
+  --password '<TheirPassword123!>' \
+  --permanent
+```
+- `--message-action SUPPRESS` skips the invite email; you hand the user their
+  password directly. `--permanent` lets them sign in immediately with no forced
+  reset. This is the reliable path because the pool has no email (SES) configured,
+  so the automatic temporary-password invite email would not be delivered.
+
+### Console alternative
+Amazon Cognito -> User pools -> select this pool -> **Users** tab ->
+**Create user** -> enter the email and a password.
+
+### Adding more users or resetting a password later
+Run `admin-create-user` again for each new person. To reset an existing user's
+password, use `admin-set-user-password` with a new value. There is no in-app
+self-service signup or password reset; user management is always an admin action.
+
+Once a user exists, open the CloudFront URL and sign in with their email and password.
 
 ## 7. (Optional) Migrate existing review data
 A fresh deploy comes up with empty tables. If you are carrying over predictions
