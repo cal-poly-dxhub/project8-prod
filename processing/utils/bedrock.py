@@ -2,41 +2,22 @@ import boto3
 import asyncio
 import os
 import json
+import time
+import random
 from datetime import datetime
 from pathlib import Path
 from botocore.config import Config
 from botocore.exceptions import ClientError
-from config import BEDROCK_MODEL_ID, BEDROCK_REGION, ENABLE_EXTENDED_THINKING, MAX_READ_TIMEOUT, THINKING_BUDGET_TOKENS, TEMPERATURE, BEDROCK_GUARDRAIL_ID, BEDROCK_GUARDRAIL_VERSION
+from config import BEDROCK_MODEL_ID, BEDROCK_REGION, ENABLE_EXTENDED_THINKING, MAX_READ_TIMEOUT, THINKING_BUDGET_TOKENS, TEMPERATURE
+
+# PHI protection happens ONCE, up front, via the upload-time direct-identifier
+# scan (see utils/pii_scan.py). The annotation calls below deliberately attach
+# NO guardrail: a per-inference guardrail blocked age-bearing batches and
+# silently zeroed out whole code groups. Rejecting identifiers at upload keeps
+# them out of the model entirely, so guarding every call buys nothing.
 
 
 _reasoning_log_dir = Path("/tmp/reasoning_traces")
-
-
-def _guardrail_config():
-    # Returns the converse guardrailConfig when a guardrail is configured via
-    # env (Fargate worker), else None so local runs skip it entirely.
-    if BEDROCK_GUARDRAIL_ID:
-        return {
-            "guardrailIdentifier": BEDROCK_GUARDRAIL_ID,
-            "guardrailVersion": BEDROCK_GUARDRAIL_VERSION or "DRAFT",
-            # Detect mode: we want detections in the trace, not blocking.
-            "trace": "enabled",
-        }
-    return None
-
-
-def _log_guardrail_trace(response):
-    # In detect mode the guardrail blocks nothing; it only reports what PII/PHI
-    # it found in the trace. Surface a per-entity count in the worker logs so
-    # operators can see when transcripts contain PHI.
-    trace = response.get("trace", {}).get("guardrail", {})
-    counts = {}
-    for assessment in trace.get("inputAssessment", {}).values():
-        for pii in assessment.get("sensitiveInformationPolicy", {}).get("piiEntities", []):
-            counts[pii.get("type", "UNKNOWN")] = counts.get(pii.get("type", "UNKNOWN"), 0) + 1
-    if counts:
-        summary = ", ".join(f"{k}={v}" for k, v in sorted(counts.items()))
-        print(f"  Guardrail PHI detected (flagged, not blocked): {summary}")
 
 
 def _log_reasoning_trace(group_name, thinking_text, annotation_count):
@@ -88,6 +69,38 @@ def _create_bedrock_client():
 
 bedrock = _create_bedrock_client()
 
+# Retry tuning for Bedrock throttling. botocore already retries a few times, but
+# under the fresh-account concurrency of the multi-pass pipeline (5 groups x N
+# batches firing at once) we still see ThrottlingException surface. We add an
+# explicit outer retry with exponential backoff + jitter and LOG every throttle
+# so we can confirm throttling (vs quota) from the worker logs instead of
+# silently returning [].
+_THROTTLE_ERRORS = ("ThrottlingException", "TooManyRequestsException",
+                    "ServiceQuotaExceededException", "ModelTimeoutException")
+BEDROCK_MAX_RETRIES = int(os.environ.get("BEDROCK_MAX_RETRIES", "6"))
+BEDROCK_BASE_DELAY = float(os.environ.get("BEDROCK_BASE_DELAY", "2.0"))
+
+
+def _converse_with_retry(label, **kwargs):
+    """Call bedrock.converse with explicit backoff on throttling.
+
+    Raises the last exception if all attempts are exhausted so the caller can
+    log it. Every throttle/retry is printed so the worker logs show whether the
+    shortfall is throttling."""
+    attempt = 0
+    while True:
+        try:
+            return bedrock.converse(**kwargs)
+        except ClientError as e:
+            code = e.response.get("Error", {}).get("Code", "")
+            if code in _THROTTLE_ERRORS and attempt < BEDROCK_MAX_RETRIES:
+                delay = BEDROCK_BASE_DELAY * (2 ** attempt) + random.uniform(0, 1)
+                attempt += 1
+                print(f"  THROTTLED ({code}) on {label}: retry {attempt}/{BEDROCK_MAX_RETRIES} after {delay:.1f}s")
+                time.sleep(delay)
+                continue
+            raise
+
 
 def blocking_bedrock_call_for_group(prompt, transcript, group_name):
     try:
@@ -125,9 +138,6 @@ def blocking_bedrock_call(prompt, transcripts):
             "maxTokens": 65536
         }
     )
-    guardrail = _guardrail_config()
-    if guardrail:
-        kwargs["guardrailConfig"] = guardrail
     response = bedrock.converse_stream(**kwargs)
     chunks = []
     for event in response["stream"]:
@@ -179,7 +189,7 @@ def blocking_bedrock_call_structured(prompt, transcripts):
                 "content": [
                     {"text": prompt},
                     {"cachePoint": {"type": "default"}},
-                    {"text": f"Text to analyze:\n{transcripts}"}
+                    {"text": f"Text to analyze:\n{transcripts}"},
                 ]
             }
         ]
@@ -202,12 +212,7 @@ def blocking_bedrock_call_structured(prompt, transcripts):
             },
             additionalModelRequestFields=additional_fields
         )
-        guardrail = _guardrail_config()
-        if guardrail:
-            converse_kwargs["guardrailConfig"] = guardrail
-        response = bedrock.converse(**converse_kwargs)
-        if guardrail:
-            _log_guardrail_trace(response)
+        response = _converse_with_retry("structured", **converse_kwargs)
         thinking_text = ""
         if 'output' in response and 'message' in response['output']:
             content = response['output']['message'].get('content', [])
@@ -225,8 +230,12 @@ def blocking_bedrock_call_structured(prompt, transcripts):
         else:
             print("  No message content in response")
             return [], thinking_text
+    except ClientError as e:
+        code = e.response.get("Error", {}).get("Code", "")
+        print(f"  Structured output ClientError [{code}] (retries exhausted): {str(e)}")
+        return [], ""
     except Exception as e:
-        print(f"  Structured output error: {str(e)}")
+        print(f"  Structured output error [{type(e).__name__}]: {str(e)}")
         return [], ""
 
 

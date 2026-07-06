@@ -31,5 +31,6 @@ def handler(event, context):
             "created_at": item["created_at"],
             "updated_at": item["updated_at"],
             "error_message": item.get("error_message"),
-        }),
+            "pii_findings": item.get("pii_findings"),
+        }, default=str),
     }

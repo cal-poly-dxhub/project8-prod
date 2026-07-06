@@ -14,6 +14,7 @@ export default function Upload({ onUploadComplete }: Props) {
   const [categories, setCategories] = useState<string[]>([]);
   const [selected, setSelected] = useState("");
   const [newCategory, setNewCategory] = useState("");
+  const [age, setAge] = useState("");
 
   useEffect(() => {
     listCategories().then(setCategories).catch(() => setCategories([]));
@@ -41,15 +42,22 @@ export default function Upload({ onUploadComplete }: Props) {
         setSelected(effectiveCategory);
         setNewCategory("");
       }
-      const { upload_url } = await createUpload(file.name, effectiveCategory);
+      // Age is optional; only send a valid non-negative number.
+      const parsedAge = age.trim() === "" ? undefined : Number(age);
+      const interviewAge =
+        parsedAge !== undefined && Number.isFinite(parsedAge) && parsedAge >= 0
+          ? parsedAge
+          : undefined;
+      const { upload_url } = await createUpload(file.name, effectiveCategory, interviewAge);
       await uploadFile(upload_url, file);
+      setAge("");
       onUploadComplete();
     } catch (e) {
       alert(`Upload failed: ${e}`);
     } finally {
       setUploading(false);
     }
-  }, [onUploadComplete, effectiveCategory, selected, categories]);
+  }, [onUploadComplete, effectiveCategory, selected, categories, age]);
 
   const onDrop = (e: React.DragEvent) => {
     e.preventDefault();
@@ -72,10 +80,12 @@ export default function Upload({ onUploadComplete }: Props) {
         <span aria-hidden className="mt-0.5 text-base">⚠️</span>
         <p>
           <strong className="font-semibold">Protected health information (PHI):</strong>{" "}
-          Interview transcripts may contain identifying details. Uploaded files are
-          processed by AWS Bedrock within this AWS account and are not used to train
-          any model. Only upload files you are authorized to share, and follow your
-          organization's data handling policies.
+          Each upload is scanned for personal identifiers (names, emails, phone
+          numbers, addresses, SSNs, and similar). If any are found you'll be
+          asked to review them and choose whether to proceed or re-upload a
+          redacted copy -- a participant's age is fine and is not flagged. Files
+          are processed by AWS Bedrock within this AWS account and are not used
+          to train any model. Only upload files you are authorized to share.
         </p>
       </div>
 
@@ -103,6 +113,23 @@ export default function Upload({ onUploadComplete }: Props) {
             />
           )}
         </div>
+      </div>
+
+      <div className="mb-5 max-w-sm">
+        <Label>Interviewee age <span className="font-normal text-slate-400">(optional)</span></Label>
+        <input
+          type="number"
+          min={0}
+          max={120}
+          placeholder="e.g. 8"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+          className="w-32 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100"
+        />
+        <p className="mt-1 text-xs text-slate-400">
+          The interviewee's age at the time of this interview. Helps the model
+          pick age-appropriate concepts.
+        </p>
       </div>
 
       <div

@@ -82,6 +82,27 @@ def parse_review_key(key):
     return interview_id, int(idx)
 
 
+# Interviewee age at interview time, keyed by interview_id ("Caregiver N").
+# Sourced from the Round 1 Disease Concept spreadsheet (Interview Number ->
+# Hero Age). Interviews absent here simply carry no age.
+LEGACY_INTERVIEW_AGES = {
+    "Caregiver 1": 7,
+    "Caregiver 2": 6,
+    "Caregiver 3": 4,
+    "Caregiver 4": 5,
+    "Caregiver 5": 8,
+    "Caregiver 6": 8,
+    "Caregiver 7": 47,
+    "Caregiver 8": 6,
+    "Caregiver 9": 6,
+    "Caregiver 10": 6,
+    "Caregiver 11": 31,
+    "Caregiver 12": 13,
+    "Caregiver 13": 11,
+    "Caregiver 14": 8,
+}
+
+
 def build_rows(interviews, reviews, category):
     """Build every predictions-table row, with reviews attached.
 
@@ -146,6 +167,9 @@ def build_rows(interviews, reviews, category):
                 "review_count": len(approvals) + len(rejections),
                 "version": 0,
             }
+            age = LEGACY_INTERVIEW_AGES.get(interview_id)
+            if age is not None:
+                row["interview_age"] = age
             # DynamoDB rejects empty-string values; drop them.
             row = {k: v for k, v in row.items() if v != ""}
             rows.append(row)

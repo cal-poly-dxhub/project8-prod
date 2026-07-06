@@ -129,9 +129,18 @@ class MainStack(Stack):
             blocked_outputs_messaging="Output blocked by P8 content policy.",
             sensitive_information_policy_config=bedrock.CfnGuardrail.SensitiveInformationPolicyConfigProperty(
                 pii_entities_config=[
+                    # action="NONE" alone is NOT enough: input_action defaults to
+                    # BLOCK, so any transcript mentioning an AGE/NAME gets the whole
+                    # request blocked (stopReason=guardrail_intervened), silently
+                    # zeroing out annotations. Explicitly set input/output actions
+                    # to NONE so the guardrail only flags and never blocks.
                     bedrock.CfnGuardrail.PiiEntityConfigProperty(
                         type=pii_type,
                         action="NONE",
+                        input_action="NONE",
+                        output_action="NONE",
+                        input_enabled=True,
+                        output_enabled=True,
                     )
                     for pii_type in phi_pii_types
                 ],

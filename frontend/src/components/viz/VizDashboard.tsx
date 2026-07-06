@@ -7,6 +7,8 @@ import {
   landscapeChart,
   hierarchyChart,
   saturationChart,
+  ageDistributionChart,
+  conceptByAgeChart,
   legendRow,
 } from "./charts";
 import { Alert, Card, Label, Select, Spinner } from "../ui";
@@ -78,6 +80,9 @@ export default function VizDashboard() {
   const landscapeNode = model && hasConcepts ? landscapeChart(model) : null;
   const hierarchyNode = model && hasConcepts ? hierarchyChart(model) : null;
   const saturationNode = model && hasConcepts ? saturationChart(model) : null;
+  const showAge = !!model && hasConcepts && model.hasAges;
+  const ageDistNode = showAge ? ageDistributionChart(model!) : null;
+  const conceptByAgeNode = showAge ? conceptByAgeChart(model!) : null;
 
   return (
     <div className="space-y-6">
@@ -164,6 +169,22 @@ export default function VizDashboard() {
           />
           <ChartMount node={saturationNode} />
           <ChartMount node={legendRow()} />
+
+          {showAge && (
+            <>
+              <SectionHeader
+                title="Interviewee Age Distribution"
+                subtitle="Ages of interviewees at interview time · binned in 2-year steps · colored by age group · only interviews with a recorded age"
+              />
+              <ChartMount node={ageDistNode} />
+
+              <SectionHeader
+                title="Concept Prevalence by Age Group"
+                subtitle="Share of interviews in each age group that mentioned each concept · top 20 concepts overall · darker = more prevalent within that age group"
+              />
+              <ChartMount node={conceptByAgeNode} />
+            </>
+          )}
         </Card>
       )}
     </div>

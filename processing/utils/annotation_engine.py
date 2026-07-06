@@ -163,7 +163,7 @@ async def annotate_with_claude(parsed_docs, scope="all", selected_doc_id=None, s
     return all_annotations
 
 
-async def annotate_with_multi_pass_claude(parsed_docs, num_passes, scope="all", selected_doc_id=None, selected_paragraph_id=None, selected_groups=None):
+async def annotate_with_multi_pass_claude(parsed_docs, num_passes, scope="all", selected_doc_id=None, selected_paragraph_id=None, selected_groups=None, interview_age=None):
     """
     Multi-pass Claude annotation using group-specific prompts.
     Each group runs N passes, filtering out used concepts between passes.
@@ -233,7 +233,7 @@ async def annotate_with_multi_pass_claude(parsed_docs, num_passes, scope="all", 
                 f"🚀 Pass {pass_num} for {group_name}: {len(remaining_codes)} codes")
             pass_annotations = await run_annotation_pass(
                 semaphore_multi, transcript_batches, group_name, group_prompt, remaining_codes, pass_num,
-                single_doc_id, paragraph_lookup, concept_notes_map, parsed_docs
+                single_doc_id, paragraph_lookup, concept_notes_map, parsed_docs, interview_age
             )
             print(
                 f"📊 Pass {pass_num} for {group_name}: {len(pass_annotations)} annotations")
@@ -253,20 +253,30 @@ async def annotate_with_multi_pass_claude(parsed_docs, num_passes, scope="all", 
                    for group_name in selected_groups]
     all_group_results = await asyncio.gather(*group_tasks, return_exceptions=True)
 
-    # Combine results
+    # Combine results. Log a per-group breakdown so the worker logs show which
+    # groups came back empty (throttled/blocked) vs healthy, instead of only a
+    # single total that hides partial failures.
     all_annotations = []
+    per_group_counts = {}
     for i, result in enumerate(all_group_results):
+        group_name = selected_groups[i]
         if isinstance(result, Exception):
-            print(f"❌ Group {selected_groups[i]} failed: {result}")
+            print(f"Group {group_name} FAILED: {type(result).__name__}: {result}")
+            per_group_counts[group_name] = "FAILED"
         else:
             all_annotations.extend(result)
+            per_group_counts[group_name] = len(result)
 
+    print(f"Per-group annotation counts: {per_group_counts}")
+    empty_groups = [g for g, c in per_group_counts.items() if c == 0 or c == "FAILED"]
+    if empty_groups:
+        print(f"WARNING: {len(empty_groups)} group(s) returned no annotations: {empty_groups}")
     print(
-        f"✅ {num_passes}-pass annotation complete: {len(all_annotations)} total annotations")
+        f"{num_passes}-pass annotation complete: {len(all_annotations)} total annotations")
     return all_annotations
 
 
-async def run_annotation_pass(semaphore, transcript_batches, group_name, group_prompt, codebook, pass_num, single_doc_id, paragraph_lookup, concept_notes_map, parsed_docs):
+async def run_annotation_pass(semaphore, transcript_batches, group_name, group_prompt, codebook, pass_num, single_doc_id, paragraph_lookup, concept_notes_map, parsed_docs, interview_age=None):
     """
     Run a single annotation pass for a specific group.
 
@@ -290,6 +300,11 @@ async def run_annotation_pass(semaphore, transcript_batches, group_name, group_p
     # Build the complete prompt for this group
     codebook_text = format_codebook_for_group(codebook)
     full_prompt = group_prompt.replace("{CODEBOOK_HERE}", codebook_text)
+
+    # Optional single-line age hint. The interviewee's age helps the model pick
+    # age-appropriate concepts (e.g. developmental milestones vs adult concerns).
+    if interview_age is not None:
+        full_prompt += f"\n\nThe interviewee is {interview_age} years old at the time of this interview."
 
     # Create annotation tasks for all batches
     pass_tasks = [

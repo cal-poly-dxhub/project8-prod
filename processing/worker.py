@@ -17,9 +17,13 @@ RESULTS_BUCKET = os.environ["RESULTS_BUCKET"]
 # Present only in the integrated stack. When set, each annotation is also
 # written as a row in the predictions table tagged with the job's category.
 PREDICTIONS_TABLE = os.environ.get("PREDICTIONS_TABLE")
+# Guardrail used ONLY for the upload-time direct-identifier scan (never to
+# block model calls). Absent on local runs, which skip the scan.
+BEDROCK_GUARDRAIL_ID = os.environ.get("BEDROCK_GUARDRAIL_ID")
+BEDROCK_GUARDRAIL_VERSION = os.environ.get("BEDROCK_GUARDRAIL_VERSION")
 
 
-def update_job_status(job_id, status, error_message=None, results_key=None):
+def update_job_status(job_id, status, error_message=None, results_key=None, pii_findings=None):
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     update_expr = "SET #s = :s, updated_at = :u"
     expr_values = {":s": status, ":u": now}
@@ -31,6 +35,9 @@ def update_job_status(job_id, status, error_message=None, results_key=None):
     if results_key:
         update_expr += ", results_key = :r"
         expr_values[":r"] = results_key
+    if pii_findings is not None:
+        update_expr += ", pii_findings = :p"
+        expr_values[":p"] = pii_findings
 
     table.update_item(
         Key={"job_id": job_id},
@@ -40,7 +47,7 @@ def update_job_status(job_id, status, error_message=None, results_key=None):
     )
 
 
-def write_prediction_rows(job_id, category, interview_id, annotations):
+def write_prediction_rows(job_id, category, interview_id, annotations, interview_age=None):
     """Write each annotation as a row in the predictions table.
 
     PK = category, SK = "{interview_id}#{idx}" where idx enumerates the
@@ -74,6 +81,10 @@ def write_prediction_rows(job_id, category, interview_id, annotations):
                 "review_count": 0,
                 "version": 0,
             }
+            # Interviewee's age at interview time (optional). Stamped on every
+            # row so the visualizations can group concepts by age without a join.
+            if interview_age is not None:
+                item["interview_age"] = interview_age
             # DynamoDB rejects empty-string values; drop them.
             item = {k: v for k, v in item.items() if v != ""}
             batch.put_item(Item=item)
@@ -82,12 +93,18 @@ def write_prediction_rows(job_id, category, interview_id, annotations):
 async def process_job(job_id, s3_key, filename):
     from utils.parsers import parse_docx_files
     from utils.annotation_engine import annotate_with_multi_pass_claude
+    from utils.pii_scan import scan_for_direct_identifiers
     from config import NUM_PASSES
 
     # Read the category off the job record (set by the upload lambda). The
     # category lives on the record, not the S3 key, so key parsing is unchanged.
     job_record = table.get_item(Key={"job_id": job_id}).get("Item") or {}
     category = job_record.get("category")
+    # Optional interviewee age at interview time. DynamoDB returns numbers as
+    # Decimal; coerce to a plain int for the prompt line and the prediction rows.
+    interview_age = job_record.get("interview_age")
+    if interview_age is not None:
+        interview_age = int(interview_age)
 
     local_path = f"/tmp/{filename}"
     s3.download_file(UPLOADS_BUCKET, s3_key, local_path)
@@ -96,11 +113,41 @@ async def process_job(job_id, s3_key, filename):
 
     with open(local_path, "rb") as f:
         parsed_docs = parse_docx_files([f])
+
+    # PII gate: scan the transcript for DIRECT identifiers (names, SSNs, etc --
+    # NOT age) before it reaches the model. Detections do NOT hard-block, since
+    # real transcripts naturally contain names/addresses. Instead we PAUSE the
+    # job in PII_REVIEW and surface the findings so the user can confirm they
+    # are comfortable proceeding (or cancel and delete the upload). Once the
+    # user proceeds, the confirm lambda re-enqueues the job with
+    # pii_acknowledged=true and we skip the scan on the second pass.
+    if not job_record.get("pii_acknowledged"):
+        transcript_text = "\n".join(
+            u.get("text", "")
+            for doc in parsed_docs
+            for u in doc.get("utterances", [])
+        )
+        findings = scan_for_direct_identifiers(
+            transcript_text, BEDROCK_GUARDRAIL_ID, BEDROCK_GUARDRAIL_VERSION
+        )
+        if findings:
+            summary = ", ".join(f"{f['type']}={f['count']}" for f in findings)
+            print(f"Job {job_id} PII_REVIEW: direct identifiers found ({summary})")
+            update_job_status(
+                job_id, "PII_REVIEW",
+                error_message="Possible personal identifiers were found in the "
+                              "transcript. Review them and choose whether to proceed.",
+                pii_findings=findings,
+            )
+            os.remove(local_path)
+            return
+
     annotations = await annotate_with_multi_pass_claude(
         parsed_docs=parsed_docs,
         num_passes=NUM_PASSES,
         scope="doc",
         selected_doc_id=parsed_docs[0]["doc_id"],
+        interview_age=interview_age,
     )
 
     results_key = f"results/{job_id}/annotations.json"
@@ -114,7 +161,7 @@ async def process_job(job_id, s3_key, filename):
     # The interview_id is the uploaded filename without its extension -- this is
     # what the predictions table and the review key are keyed on.
     interview_id = os.path.splitext(os.path.basename(filename))[0]
-    write_prediction_rows(job_id, category, interview_id, annotations)
+    write_prediction_rows(job_id, category, interview_id, annotations, interview_age)
 
     update_job_status(job_id, "COMPLETED", results_key=results_key)
     os.remove(local_path)

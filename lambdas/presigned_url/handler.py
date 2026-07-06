@@ -25,6 +25,24 @@ UPLOADS_BUCKET = os.environ["UPLOADS_BUCKET"]
 CATEGORIES_TABLE = os.environ.get("CATEGORIES_TABLE")
 
 
+def _parse_age(raw):
+    """Normalize an optional age input to a non-negative int, or None.
+
+    Accepts numbers or numeric strings; anything blank/invalid/out-of-range is
+    treated as "not provided" so the field stays optional and never blocks an
+    upload.
+    """
+    if raw is None or (isinstance(raw, str) and not raw.strip()):
+        return None
+    try:
+        age = int(float(raw))
+    except (TypeError, ValueError):
+        return None
+    if 0 <= age <= 120:
+        return age
+    return None
+
+
 def handler(event, context):
     body = json.loads(event["body"])
     filename = body["filename"]
@@ -32,6 +50,11 @@ def handler(event, context):
     # The category is stored on the job record, NOT in the S3 key, so the
     # worker's key parsing is unchanged -- the worker reads it back by job_id.
     category = (body.get("category") or "").strip()
+    # Optional interviewee age at the time of THIS interview (distinct from the
+    # per-annotation `age`, which is the age at which a described event happened).
+    # Stored on the job record and later stamped onto every prediction row so the
+    # visualizations can break concepts down by age.
+    interview_age = _parse_age(body.get("interview_age"))
 
     claims = event["requestContext"]["authorizer"]["claims"]
     user_id = claims["sub"]
@@ -60,6 +83,8 @@ def handler(event, context):
     }
     if category:
         item["category"] = category
+    if interview_age is not None:
+        item["interview_age"] = interview_age
     table.put_item(Item=item)
 
     # Register the category (idempotent) so it shows up in the dropdown later.

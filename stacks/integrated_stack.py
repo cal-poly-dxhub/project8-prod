@@ -144,7 +144,12 @@ class IntegratedStack(Stack):
             dead_letter_queue=sqs.DeadLetterQueue(max_receive_count=3, queue=dlq),
         )
 
-        # === Bedrock PHI Guardrail (detect mode -- flags, never blocks) ===
+        # === Bedrock PHI Guardrail (used ONLY by the upload-time PII scan) ===
+        # The worker calls ApplyGuardrail (source=INPUT) on each uploaded
+        # transcript to detect DIRECT identifiers before annotating; it reads
+        # the assessment and rejects the job itself. This guardrail is NOT
+        # attached to any model invocation, so its block/detect actions are
+        # irrelevant -- we only consume the reported piiEntities.
         phi_pii_types = [
             "NAME", "EMAIL", "PHONE", "ADDRESS", "AGE", "USERNAME",
             "US_SOCIAL_SECURITY_NUMBER", "US_PASSPORT_NUMBER", "DRIVER_ID",
@@ -158,7 +163,20 @@ class IntegratedStack(Stack):
             blocked_outputs_messaging="Output blocked by content policy.",
             sensitive_information_policy_config=bedrock.CfnGuardrail.SensitiveInformationPolicyConfigProperty(
                 pii_entities_config=[
-                    bedrock.CfnGuardrail.PiiEntityConfigProperty(type=t, action="NONE")
+                    # action="NONE" alone is NOT enough: input_action defaults to
+                    # BLOCK, so any transcript mentioning an AGE/NAME (every one of
+                    # ours) gets the whole request blocked (stopReason=
+                    # guardrail_intervened), silently zeroing out annotations. We
+                    # must explicitly set input/output actions to NONE so the
+                    # guardrail only flags/detects and never blocks.
+                    bedrock.CfnGuardrail.PiiEntityConfigProperty(
+                        type=t,
+                        action="NONE",
+                        input_action="NONE",
+                        output_action="NONE",
+                        input_enabled=True,
+                        output_enabled=True,
+                    )
                     for t in phi_pii_types
                 ],
             ),
@@ -225,6 +243,8 @@ class IntegratedStack(Stack):
                 "JOBS_TABLE": jobs_table.table_name,
                 "PREDICTIONS_TABLE": predictions_table.table_name,
                 "BEDROCK_REGION": self.region,
+                # Consumed by the upload-time PII scan (utils/pii_scan.py), not
+                # by any converse/annotation call.
                 "BEDROCK_GUARDRAIL_ID": guardrail.attr_guardrail_id,
                 "BEDROCK_GUARDRAIL_VERSION": guardrail_version.attr_version,
             },
@@ -285,6 +305,13 @@ class IntegratedStack(Stack):
         results_bucket.grant_read(get_results_fn)
         jobs_table.grant_read_data(get_results_fn)
 
+        # Resolves a job paused in PII_REVIEW: proceed (re-enqueue) or cancel.
+        pii_decision_fn = make_fn("PiiDecisionFn", "pii_decision")
+        pii_decision_fn.add_environment("QUEUE_URL", processing_queue.queue_url)
+        jobs_table.grant_read_write_data(pii_decision_fn)
+        uploads_bucket.grant_delete(pii_decision_fn)
+        processing_queue.grant_send_messages(pii_decision_fn)
+
         list_jobs_fn = make_fn("ListJobsFn", "list_jobs")
         jobs_table.grant_read_data(list_jobs_fn)
 
@@ -334,6 +361,7 @@ class IntegratedStack(Stack):
         job_resource = jobs_resource.add_resource("{id}")
         job_resource.add_resource("status").add_method("GET", apigw.LambdaIntegration(job_status_fn), **auth)
         job_resource.add_resource("results").add_method("GET", apigw.LambdaIntegration(get_results_fn), **auth)
+        job_resource.add_resource("pii-decision").add_method("POST", apigw.LambdaIntegration(pii_decision_fn), **auth)
 
         predictions_resource = api.root.add_resource("predictions")
         predictions_resource.add_method("GET", apigw.LambdaIntegration(list_predictions_fn), **auth)

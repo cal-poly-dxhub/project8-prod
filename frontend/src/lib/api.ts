@@ -11,6 +11,12 @@ async function authHeaders(): Promise<Record<string, string>> {
   };
 }
 
+export interface PiiFinding {
+  type: string;
+  count: number;
+  sample?: string;
+}
+
 export interface Job {
   job_id: string;
   filename: string;
@@ -18,13 +24,18 @@ export interface Job {
   created_at: string;
   updated_at: string;
   error_message?: string;
+  pii_findings?: PiiFinding[];
 }
 
-export async function createUpload(filename: string, category: string): Promise<{ job_id: string; upload_url: string }> {
+export async function createUpload(
+  filename: string,
+  category: string,
+  interviewAge?: number
+): Promise<{ job_id: string; upload_url: string }> {
   const resp = await fetch(`${API_URL}uploads`, {
     method: "POST",
     headers: await authHeaders(),
-    body: JSON.stringify({ filename, category }),
+    body: JSON.stringify({ filename, category, interview_age: interviewAge }),
   });
   if (!resp.ok) {
     throw new Error(`Failed to create upload: ${resp.status} ${resp.statusText}`);
@@ -75,6 +86,17 @@ export async function getResultsUrl(jobId: string): Promise<string> {
   const resp = await fetch(`${API_URL}jobs/${jobId}/results`, { headers: await authHeaders() });
   const data = await resp.json();
   return data.download_url;
+}
+
+export async function decidePii(jobId: string, decision: "proceed" | "cancel"): Promise<void> {
+  const resp = await fetch(`${API_URL}jobs/${jobId}/pii-decision`, {
+    method: "POST",
+    headers: { ...(await authHeaders()), "Content-Type": "application/json" },
+    body: JSON.stringify({ decision }),
+  });
+  if (!resp.ok) {
+    throw new Error(`Failed to submit decision: ${resp.status} ${resp.statusText}`);
+  }
 }
 
 // === Review ===
@@ -164,6 +186,7 @@ export interface VizCaregiver {
   caregiver_id: string;
   filename: string;
   timestamp: string | null;
+  interview_age?: number | null;
   expected: string[];
   predicted: string[];
 }

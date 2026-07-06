@@ -57,6 +57,8 @@ def handler(event, context):
     concept_caregivers = defaultdict(set)
     # first quote seen per concept, for the bar-chart hover preview
     concept_quote = {}
+    # interview_id -> interviewee age at interview time (optional)
+    interview_age = {}
 
     for r in rows:
         if r.get("status") == "REJECTED":
@@ -66,6 +68,8 @@ def handler(event, context):
             continue
         cid = str(cid)
         interview = r.get("interview_id") or ""
+        if r.get("interview_age") is not None and interview not in interview_age:
+            interview_age[interview] = int(r["interview_age"])
         quote = (r.get("quote") or "").strip()
         age = r.get("age") or None
 
@@ -89,6 +93,7 @@ def handler(event, context):
             "caregiver_id": interview,
             "filename": interview,
             "timestamp": None,
+            "interview_age": interview_age.get(interview),
             "expected": expected,
             "predicted": expected,
         })

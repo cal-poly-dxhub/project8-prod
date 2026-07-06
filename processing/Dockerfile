@@ -1,5 +1,9 @@
 FROM --platform=linux/amd64 python:3.11-slim
 
+# Unbuffered stdout/stderr so worker print() output reaches CloudWatch in real
+# time instead of being held in Python's buffer until the process exits.
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /app
 
 COPY requirements.txt .

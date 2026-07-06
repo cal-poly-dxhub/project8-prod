@@ -37,6 +37,10 @@ export interface VizModel {
   conceptCounts: Map<string, number>;
   allConcepts: Array<VizConcept & { id: string; cnt: number }>;
   cooc: (a: string, b: string) => number;
+  // Interviewee ages (aligned to `caregivers`/`caregiverSets` by index); null
+  // where the upload provided no age. `hasAges` is true if at least one is set.
+  ages: Array<number | null>;
+  hasAges: boolean;
 }
 
 export function buildModel(data: AggregateData): VizModel {
@@ -60,6 +64,11 @@ export function buildModel(data: AggregateData): VizModel {
       return ci !== 0 ? ci : b.cnt - a.cnt;
     });
 
+  const ages = caregivers.map((cg) =>
+    cg.interview_age === null || cg.interview_age === undefined ? null : Number(cg.interview_age)
+  );
+  const hasAges = ages.some((a) => a !== null);
+
   return {
     nInterviews: data.n_interviews,
     caregivers,
@@ -69,7 +78,23 @@ export function buildModel(data: AggregateData): VizModel {
     conceptCounts,
     allConcepts,
     cooc,
+    ages,
+    hasAges,
   };
+}
+
+// Age-group buckets shared by the age charts. Interviewees span young children
+// to adults, so the bands are wide enough to hold real cohorts.
+export const AGE_GROUPS: Array<{ label: string; min: number; max: number }> = [
+  { label: "0-5", min: 0, max: 5 },
+  { label: "6-10", min: 6, max: 10 },
+  { label: "11-17", min: 11, max: 17 },
+  { label: "18+", min: 18, max: Infinity },
+];
+
+function ageGroupOf(age: number): string {
+  const g = AGE_GROUPS.find((b) => age >= b.min && age <= b.max);
+  return g ? g.label : "unknown";
 }
 
 // ── Shared floating tooltip ──────────────────────────────────────────────────
@@ -562,6 +587,140 @@ export function saturationChart(model: VizModel): HTMLElement {
   summary.textContent = `${finalTotal} unique concepts identified across ${nCg} caregivers.` +
     (sat90n ? ` 90% of concepts emerged by caregiver ${sat90n}, indicating saturation.` : "");
   wrap.appendChild(c1); wrap.appendChild(c2); wrap.appendChild(summary);
+  return wrap;
+}
+
+// ── Chart 6: Interviewee Age Distribution ────────────────────────────────────
+// Histogram of interviewee ages, colored by the same age-group bands used in
+// the concepts-by-age heatmap. Only interviews that supplied an age are shown.
+export function ageDistributionChart(model: VizModel): HTMLElement {
+  const ages = model.ages.filter((a): a is number => a !== null);
+  const ageGroupColor: Record<string, string> = {
+    "0-5": "#4472C4", "6-10": "#70AD47", "11-17": "#FFC000", "18+": "#ED7D31",
+  };
+  const rows = ages.map((age) => ({ age, group: ageGroupOf(age) }));
+  const maxAge = Math.max(...ages, 1);
+
+  const chart = Plot.plot({
+    width: 720, height: 300,
+    marginLeft: 45, marginRight: 20, marginTop: 24, marginBottom: 40,
+    style: { fontFamily: "Inter, sans-serif" },
+    x: { label: "Age (years)", labelAnchor: "center", domain: [0, Math.ceil((maxAge + 2) / 5) * 5], grid: true },
+    y: { label: "Interviews", grid: true, tickFormat: (d: number) => (Number.isInteger(d) ? String(d) : "") },
+    color: {
+      domain: AGE_GROUPS.map((g) => g.label),
+      range: AGE_GROUPS.map((g) => ageGroupColor[g.label] || "#999"),
+    },
+    marks: [
+      Plot.rectY(rows, Plot.binX({ y: "count" }, {
+        x: "age", interval: 2, fill: "group",
+        rx: 2, inset: 0.5,
+        tip: { format: { y: true, x: true, fill: true } },
+      } as Plot.BinXInputs<Plot.RectYOptions>)),
+      Plot.ruleY([0]),
+    ],
+  });
+
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "display:flex;flex-direction:column;align-items:center;";
+  const chartBox = document.createElement("div");
+  chartBox.style.lineHeight = "0";
+  chartBox.appendChild(chart);
+  wrap.appendChild(chartBox);
+
+  const withAge = ages.length;
+  const total = model.nInterviews;
+  const summary = document.createElement("div");
+  summary.style.cssText = "font-size:12px;color:#475569;margin-top:10px;text-align:center;max-width:640px;";
+  const median = ages.slice().sort((a, b) => a - b)[Math.floor(ages.length / 2)];
+  summary.textContent =
+    `${withAge} of ${total} interview${total !== 1 ? "s" : ""} have an age recorded` +
+    ` · range ${Math.min(...ages)}-${Math.max(...ages)} · median ${median}.`;
+  wrap.appendChild(summary);
+  return wrap;
+}
+
+// ── Chart 7: Concept Prevalence by Age Group ─────────────────────────────────
+// Heatmap of the top concepts (rows) against age-group bands (columns). Each
+// cell shows the share of interviews IN THAT AGE GROUP that mentioned the
+// concept, so a concept common in young children but absent in adults stands
+// out. Only interviews with an age contribute.
+export function conceptByAgeChart(model: VizModel, topN = 20): HTMLElement {
+  const { allConcepts, caregiverSets, ages } = model;
+
+  // Interviews grouped by age band -> the concept-id sets in that band.
+  const bandSets = new Map<string, Set<string>[]>();
+  ages.forEach((age, i) => {
+    if (age === null) return;
+    const band = ageGroupOf(age);
+    if (!bandSets.has(band)) bandSets.set(band, []);
+    bandSets.get(band)!.push(caregiverSets[i]);
+  });
+  // Keep only the age bands that actually have interviews, in canonical order.
+  const bands = AGE_GROUPS.map((g) => g.label).filter((b) => (bandSets.get(b)?.length ?? 0) > 0);
+
+  // Rank concepts by overall count, take the top N (skip demographics already
+  // filtered out in allConcepts).
+  const rowConcepts = allConcepts.slice(0, topN);
+
+  const cells = rowConcepts.flatMap((row) =>
+    bands.map((band) => {
+      const sets = bandSets.get(band)!;
+      const n = sets.length;
+      const mentioned = sets.filter((s) => s.has(row.id)).length;
+      return {
+        concept: row.name, band, category: row.category,
+        count: mentioned, total: n,
+        pct: n ? mentioned / n : 0,
+      };
+    })
+  );
+
+  const bandLabel = (b: string) => {
+    const n = bandSets.get(b)?.length ?? 0;
+    return `${b}\n(n=${n})`;
+  };
+
+  const CELL = 30;
+  const chart = Plot.plot({
+    width: 260 + bands.length * (CELL + 24) + 40,
+    height: 60 + rowConcepts.length * (CELL - 6) + 40,
+    marginLeft: 260, marginRight: 40, marginTop: 60, marginBottom: 20,
+    style: { fontFamily: "Inter, sans-serif", overflow: "visible" },
+    x: { domain: bands, axis: null },
+    y: { domain: rowConcepts.map((r) => r.name), axis: null },
+    color: { type: "linear", domain: [0, 1], range: ["#f1f5f9", "#4338ca"] },
+    marks: [
+      Plot.cell(cells, {
+        x: "band", y: "concept", fill: "pct",
+        channels: {
+          Concept: "concept", "Age group": "band",
+          Mentioned: (d: { count: number; total: number }) => `${d.count} of ${d.total}`,
+          Share: (d: { pct: number }) => `${Math.round(d.pct * 100)}%`,
+        },
+        tip: { format: { fill: false, x: false, y: false } },
+      }),
+      Plot.text(cells, {
+        x: "band", y: "concept",
+        text: (d: { pct: number; total: number }) => (d.total ? `${Math.round(d.pct * 100)}%` : ""),
+        fill: (d: { pct: number }) => (d.pct > 0.55 ? "white" : "#334155"),
+        fontSize: 10,
+      }),
+      Plot.axisY(rowConcepts.map((r) => r.name), {
+        y: (d: string) => d, anchor: "left", tickSize: 0, fontSize: 10,
+        tickFormat: (d: string) => trunc(d, 34),
+      }),
+      Plot.axisX(bands, {
+        x: (d: string) => d, anchor: "top", tickSize: 0, fontSize: 10, fontWeight: 600,
+        tickFormat: bandLabel,
+      }),
+    ],
+  });
+  attachAxisTooltips(chart, new Map(rowConcepts.map((r) => [trunc(r.name, 34), r.name])));
+
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "display:flex;justify-content:center;overflow-x:auto;";
+  wrap.appendChild(chart);
   return wrap;
 }
 

@@ -24,10 +24,12 @@ def handler(event, context):
         "status": item["status"],
         "created_at": item["created_at"],
         "updated_at": item["updated_at"],
+        "error_message": item.get("error_message"),
+        "pii_findings": item.get("pii_findings"),
     } for item in resp["Items"]]
 
     return {
         "statusCode": 200,
         "headers": {"Access-Control-Allow-Origin": "*"},
-        "body": json.dumps({"jobs": jobs}),
+        "body": json.dumps({"jobs": jobs}, default=str),
     }
