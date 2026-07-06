@@ -104,6 +104,12 @@ class IntegratedStack(Stack):
             partition_key=dynamodb.Attribute(name="category", type=dynamodb.AttributeType.STRING),
             sort_key=dynamodb.Attribute(name="created_at", type=dynamodb.AttributeType.STRING),
         )
+        # list_jobs queries this to show a user their own uploads, newest first.
+        jobs_table.add_global_secondary_index(
+            index_name="user-index",
+            partition_key=dynamodb.Attribute(name="user_id", type=dynamodb.AttributeType.STRING),
+            sort_key=dynamodb.Attribute(name="created_at", type=dynamodb.AttributeType.STRING),
+        )
 
         # === DynamoDB: categories (the disease/mutation groups) ===
         # Tiny table: one item per category name. "Choose existing or create
