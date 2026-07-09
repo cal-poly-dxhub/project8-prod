@@ -47,7 +47,7 @@ def update_job_status(job_id, status, error_message=None, results_key=None, pii_
     )
 
 
-def write_prediction_rows(job_id, category, interview_id, annotations, interview_age=None):
+def write_prediction_rows(job_id, category, interview_id, annotations, interview_age=None, hero_id=None):
     """Write each annotation as a row in the predictions table.
 
     PK = category, SK = "{interview_id}#{idx}" where idx enumerates the
@@ -85,6 +85,11 @@ def write_prediction_rows(job_id, category, interview_id, annotations, interview
             # row so the visualizations can group concepts by age without a join.
             if interview_age is not None:
                 item["interview_age"] = interview_age
+            # Hero id (optional): the interviewee identifier, stamped on every
+            # row so the visualizations can group a hero's interviews across
+            # ages for longitudinal / comorbidity analysis.
+            if hero_id:
+                item["hero_id"] = hero_id
             # DynamoDB rejects empty-string values; drop them.
             item = {k: v for k, v in item.items() if v != ""}
             batch.put_item(Item=item)
@@ -105,6 +110,9 @@ async def process_job(job_id, s3_key, filename):
     interview_age = job_record.get("interview_age")
     if interview_age is not None:
         interview_age = int(interview_age)
+    # Optional hero id: a free-form interviewee identifier the customer maintains.
+    # Not validated; stamped onto every prediction row for longitudinal grouping.
+    hero_id = job_record.get("hero_id")
 
     local_path = f"/tmp/{filename}"
     s3.download_file(UPLOADS_BUCKET, s3_key, local_path)
@@ -161,7 +169,7 @@ async def process_job(job_id, s3_key, filename):
     # The interview_id is the uploaded filename without its extension -- this is
     # what the predictions table and the review key are keyed on.
     interview_id = os.path.splitext(os.path.basename(filename))[0]
-    write_prediction_rows(job_id, category, interview_id, annotations, interview_age)
+    write_prediction_rows(job_id, category, interview_id, annotations, interview_age, hero_id)
 
     update_job_status(job_id, "COMPLETED", results_key=results_key)
     os.remove(local_path)

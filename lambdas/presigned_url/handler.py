@@ -55,6 +55,12 @@ def handler(event, context):
     # Stored on the job record and later stamped onto every prediction row so the
     # visualizations can break concepts down by age.
     interview_age = _parse_age(body.get("interview_age"))
+    # Optional hero id: a caller-supplied identifier for the interviewee (the
+    # "hero"). The same hero can be interviewed at multiple ages, so this lets
+    # the visualizations group interviews by person for longitudinal / over-time
+    # and comorbidity analysis. We do NOT validate it -- it is a free-form string
+    # the customer's own user is responsible for maintaining.
+    hero_id = (body.get("hero_id") or "").strip()
 
     claims = event["requestContext"]["authorizer"]["claims"]
     user_id = claims["sub"]
@@ -85,6 +91,8 @@ def handler(event, context):
         item["category"] = category
     if interview_age is not None:
         item["interview_age"] = interview_age
+    if hero_id:
+        item["hero_id"] = hero_id
     table.put_item(Item=item)
 
     # Register the category (idempotent) so it shows up in the dropdown later.

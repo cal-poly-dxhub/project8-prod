@@ -30,12 +30,13 @@ export interface Job {
 export async function createUpload(
   filename: string,
   category: string,
-  interviewAge?: number
+  interviewAge?: number,
+  heroId?: string
 ): Promise<{ job_id: string; upload_url: string }> {
   const resp = await fetch(`${API_URL}uploads`, {
     method: "POST",
     headers: await authHeaders(),
-    body: JSON.stringify({ filename, category, interview_age: interviewAge }),
+    body: JSON.stringify({ filename, category, interview_age: interviewAge, hero_id: heroId }),
   });
   if (!resp.ok) {
     throw new Error(`Failed to create upload: ${resp.status} ${resp.statusText}`);
@@ -187,6 +188,7 @@ export interface VizCaregiver {
   filename: string;
   timestamp: string | null;
   interview_age?: number | null;
+  hero_id?: string | null;
   expected: string[];
   predicted: string[];
 }

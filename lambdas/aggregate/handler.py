@@ -59,6 +59,10 @@ def handler(event, context):
     concept_quote = {}
     # interview_id -> interviewee age at interview time (optional)
     interview_age = {}
+    # interview_id -> hero id (optional free-form interviewee identifier). Lets
+    # the visualizations group a hero's interviews across ages for longitudinal
+    # / comorbidity analysis.
+    interview_hero = {}
 
     for r in rows:
         if r.get("status") == "REJECTED":
@@ -70,6 +74,8 @@ def handler(event, context):
         interview = r.get("interview_id") or ""
         if r.get("interview_age") is not None and interview not in interview_age:
             interview_age[interview] = int(r["interview_age"])
+        if r.get("hero_id") and interview not in interview_hero:
+            interview_hero[interview] = str(r["hero_id"])
         quote = (r.get("quote") or "").strip()
         age = r.get("age") or None
 
@@ -94,6 +100,7 @@ def handler(event, context):
             "filename": interview,
             "timestamp": None,
             "interview_age": interview_age.get(interview),
+            "hero_id": interview_hero.get(interview),
             "expected": expected,
             "predicted": expected,
         })

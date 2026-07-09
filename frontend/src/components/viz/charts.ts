@@ -41,6 +41,11 @@ export interface VizModel {
   // where the upload provided no age. `hasAges` is true if at least one is set.
   ages: Array<number | null>;
   hasAges: boolean;
+  // Hero ids (aligned to `caregivers`/`caregiverSets` by index); null where the
+  // upload provided none. `heroTimeline` is true when at least one hero has two
+  // or more interviews WITH ages, which is what the over-time charts need.
+  heroIds: Array<string | null>;
+  hasHeroTimeline: boolean;
 }
 
 export function buildModel(data: AggregateData): VizModel {
@@ -69,6 +74,20 @@ export function buildModel(data: AggregateData): VizModel {
   );
   const hasAges = ages.some((a) => a !== null);
 
+  const heroIds = caregivers.map((cg) =>
+    cg.hero_id === null || cg.hero_id === undefined || cg.hero_id === ""
+      ? null
+      : String(cg.hero_id)
+  );
+  // A hero timeline is meaningful only if some hero appears in 2+ interviews
+  // that each carry an age (so concepts can be plotted against age).
+  const heroAgeCounts = new Map<string, number>();
+  heroIds.forEach((h, i) => {
+    if (h !== null && ages[i] !== null)
+      heroAgeCounts.set(h, (heroAgeCounts.get(h) || 0) + 1);
+  });
+  const hasHeroTimeline = [...heroAgeCounts.values()].some((c) => c >= 2);
+
   return {
     nInterviews: data.n_interviews,
     caregivers,
@@ -80,13 +99,16 @@ export function buildModel(data: AggregateData): VizModel {
     cooc,
     ages,
     hasAges,
+    heroIds,
+    hasHeroTimeline,
   };
 }
 
 // Age-group buckets shared by the age charts. Interviewees span young children
 // to adults, so the bands are wide enough to hold real cohorts.
 export const AGE_GROUPS: Array<{ label: string; min: number; max: number }> = [
-  { label: "0-5", min: 0, max: 5 },
+  { label: "0-2", min: 0, max: 2 },
+  { label: "3-5", min: 3, max: 5 },
   { label: "6-10", min: 6, max: 10 },
   { label: "11-17", min: 11, max: 17 },
   { label: "18+", min: 18, max: Infinity },
@@ -596,7 +618,7 @@ export function saturationChart(model: VizModel): HTMLElement {
 export function ageDistributionChart(model: VizModel): HTMLElement {
   const ages = model.ages.filter((a): a is number => a !== null);
   const ageGroupColor: Record<string, string> = {
-    "0-5": "#4472C4", "6-10": "#70AD47", "11-17": "#FFC000", "18+": "#ED7D31",
+    "0-2": "#4472C4", "3-5": "#5B9BD5", "6-10": "#70AD47", "11-17": "#FFC000", "18+": "#ED7D31",
   };
   const rows = ages.map((age) => ({ age, group: ageGroupOf(age) }));
   const maxAge = Math.max(...ages, 1);
@@ -721,6 +743,181 @@ export function conceptByAgeChart(model: VizModel, topN = 20): HTMLElement {
   const wrap = document.createElement("div");
   wrap.style.cssText = "display:flex;justify-content:center;overflow-x:auto;";
   wrap.appendChild(chart);
+  return wrap;
+}
+
+// ── Chart 8: Concept Progression Over Age (per hero) ─────────────────────────
+// For each hero interviewed at 2+ ages, plot how many concepts in each category
+// were mentioned at each age. Faceted one row per hero, x = age, colored line
+// per category. Surfaces change-over-time / progression for a single person.
+export function heroProgressionChart(model: VizModel): HTMLElement {
+  const { caregivers, caregiverSets, codebook, ages, heroIds } = model;
+
+  // Gather per-hero interviews that carry an age.
+  const byHero = new Map<string, Array<{ age: number; set: Set<string> }>>();
+  heroIds.forEach((h, i) => {
+    if (h === null || ages[i] === null) return;
+    if (!byHero.has(h)) byHero.set(h, []);
+    byHero.get(h)!.push({ age: ages[i] as number, set: caregiverSets[i] });
+  });
+
+  // Keep heroes with 2+ aged interviews, sort each hero's interviews by age.
+  const heroes = [...byHero.entries()]
+    .filter(([, arr]) => arr.length >= 2)
+    .map(([hero, arr]) => [hero, arr.slice().sort((a, b) => a.age - b.age)] as const)
+    .sort((a, b) => (a[0] < b[0] ? -1 : 1));
+
+  // One point per (hero, interview-age, category): count of that category's
+  // concepts mentioned. Skip demographics (already filtered out of the codebook
+  // categories used elsewhere, but guard anyway).
+  const points: Array<{ hero: string; age: number; category: string; count: number }> = [];
+  for (const [hero, arr] of heroes) {
+    for (const { age, set } of arr) {
+      const catCounts: Record<string, number> = Object.fromEntries(catOrder.map((c) => [c, 0]));
+      for (const id of set) {
+        const meta = codebook.get(id);
+        if (meta && catCounts[meta.category] !== undefined) catCounts[meta.category]++;
+      }
+      for (const cat of catOrder) points.push({ hero, age, category: cat, count: catCounts[cat] });
+    }
+  }
+
+  void caregivers;
+
+  const chart = Plot.plot({
+    width: 820,
+    height: Math.max(220, heroes.length * 170),
+    marginLeft: 48, marginRight: 24, marginTop: 30, marginBottom: 40,
+    style: { fontFamily: "Inter, sans-serif" },
+    x: { label: "Age at interview (years)", labelAnchor: "center", grid: true, tickFormat: (d: number) => String(d) },
+    y: { label: "Concepts mentioned", grid: true, tickFormat: (d: number) => (Number.isInteger(d) ? String(d) : "") },
+    fy: { label: null },
+    color: { domain: catOrder, range: catOrder.map((c) => catColors[c]), legend: true, tickFormat: catLabel },
+    marks: [
+      Plot.line(points, {
+        x: "age", y: "count", fy: "hero", stroke: "category", strokeWidth: 2,
+        curve: "monotone-x", z: (d: { hero: string; category: string }) => `${d.hero}|${d.category}`,
+      }),
+      Plot.dot(points, {
+        x: "age", y: "count", fy: "hero", fill: "category", r: 3, stroke: "white", strokeWidth: 0.8,
+        channels: { Hero: "hero", Category: (d: { category: string }) => catLabel(d.category), Age: "age", Concepts: "count" },
+        tip: { format: { x: false, y: false, fill: false, fy: false } },
+      }),
+      Plot.text(heroes.map(([hero]) => ({ hero })), {
+        fy: "hero", frameAnchor: "top-left", dx: 4, dy: -18,
+        text: (d: { hero: string }) => `Hero ${d.hero}`, fontSize: 11, fontWeight: 600, fill: "#334155",
+      }),
+    ],
+  });
+
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "display:flex;flex-direction:column;align-items:center;overflow-x:auto;";
+  const chartBox = document.createElement("div");
+  chartBox.style.lineHeight = "0";
+  chartBox.appendChild(chart);
+  wrap.appendChild(chartBox);
+
+  const summary = document.createElement("div");
+  summary.style.cssText = "font-size:12px;color:#475569;margin-top:10px;text-align:center;max-width:640px;";
+  summary.textContent =
+    `${heroes.length} hero${heroes.length !== 1 ? "s" : ""} interviewed at multiple ages. ` +
+    `Each panel tracks how many concepts per category were mentioned as the hero aged.`;
+  wrap.appendChild(summary);
+  return wrap;
+}
+
+// ── Chart 9: Comorbidity Co-occurrence (per hero) ────────────────────────────
+// Co-occurrence heatmap computed at the HERO level: a hero's concept set is the
+// union of concepts across all their interviews. A cell shows in how many
+// heroes concept A and concept B both appear, surfacing comorbidities /
+// correlated concepts within individuals.
+export function comorbidityChart(model: VizModel, topN = 18): HTMLElement {
+  const { caregiverSets, heroIds, codebook } = model;
+
+  // Union each hero's concepts across all their interviews.
+  const heroConceptSets = new Map<string, Set<string>>();
+  heroIds.forEach((h, i) => {
+    if (h === null) return;
+    if (!heroConceptSets.has(h)) heroConceptSets.set(h, new Set());
+    const target = heroConceptSets.get(h)!;
+    for (const id of caregiverSets[i]) target.add(id);
+  });
+  const heroSets = [...heroConceptSets.values()];
+  const nHeroes = heroSets.length;
+
+  // Rank concepts by how many heroes mention them; take the top N.
+  const heroCount = new Map<string, number>();
+  for (const s of heroSets) for (const id of s) heroCount.set(id, (heroCount.get(id) || 0) + 1);
+  const ranked = [...heroCount.entries()]
+    .filter(([id]) => codebook.has(id) && codebook.get(id)!.category !== "DEMOGRAPHICS")
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, topN)
+    .map(([id]) => ({ id, name: codebook.get(id)!.name, category: codebook.get(id)!.category }));
+
+  const heroCooc = (a: string, b: string) => heroSets.filter((s) => s.has(a) && s.has(b)).length;
+  const maxCo = Math.max(1, ...ranked.flatMap((r) => ranked.map((c) => (r.id === c.id ? 0 : heroCooc(r.id, c.id)))));
+
+  const cells = ranked.flatMap((row) =>
+    ranked.map((col) => ({
+      rowName: row.name, colName: col.name, colCat: col.category,
+      value: row.id === col.id ? null : heroCooc(row.id, col.id),
+      normalized: row.id === col.id ? 0 : heroCooc(row.id, col.id) / maxCo,
+    }))
+  );
+
+  const CELL = 22;
+  const chart = Plot.plot({
+    width: 260 + ranked.length * CELL + 20,
+    height: 200 + ranked.length * CELL + 20,
+    marginLeft: 260, marginRight: 20, marginTop: 200, marginBottom: 20,
+    style: { overflow: "visible", fontFamily: "Inter, sans-serif" },
+    x: { domain: ranked.map((r) => r.name), axis: null },
+    y: { domain: ranked.map((r) => r.name), axis: null },
+    marks: [
+      Plot.cell(cells, {
+        x: "colName", y: "rowName",
+        fill: (d: { colCat: string; normalized: number; value: number | null }) =>
+          d.value === null ? "#e2e8f0" : d3.interpolateRgb("white", catColors[d.colCat] || "#4338ca")(d.normalized),
+        channels: {
+          Concept: "rowName", "Co-occurs with": "colName",
+          "Shared heroes": (d: { value: number | null }) => (d.value === null ? "-" : String(d.value)),
+        },
+        tip: { format: { fill: false, x: false, y: false } },
+      }),
+      Plot.text(cells, {
+        x: "colName", y: "rowName",
+        text: (d: { value: number | null; normalized: number }) => (d.value ? String(d.value) : ""),
+        fill: (d: { normalized: number }) => (d.normalized > 0.55 ? "white" : "#334155"),
+        fontSize: 9,
+      }),
+      Plot.axisY(ranked.map((r) => r.name), {
+        y: (d: string) => d, anchor: "left", tickSize: 0, fontSize: 9,
+        tickFormat: (d: string) => trunc(d, 34),
+      }),
+      Plot.axisX(ranked.map((r) => r.name), {
+        x: (d: string) => d, anchor: "top", tickSize: 0, fontSize: 8.5,
+        tickFormat: (d: string) => trunc(d, 22), tickRotate: -55,
+      }),
+    ],
+  });
+  attachAxisTooltips(chart, new Map([
+    ...ranked.map((r) => [trunc(r.name, 34), r.name] as [string, string]),
+    ...ranked.map((r) => [trunc(r.name, 22), r.name] as [string, string]),
+  ]));
+
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "display:flex;flex-direction:column;align-items:center;overflow-x:auto;";
+  const chartBox = document.createElement("div");
+  chartBox.style.lineHeight = "0";
+  chartBox.appendChild(chart);
+  wrap.appendChild(chartBox);
+
+  const summary = document.createElement("div");
+  summary.style.cssText = "font-size:12px;color:#475569;margin-top:10px;text-align:center;max-width:640px;";
+  summary.textContent =
+    `Concept pairs co-occurring within the same hero across ${nHeroes} hero${nHeroes !== 1 ? "s" : ""}. ` +
+    `Darker cells are stronger comorbidities.`;
+  wrap.appendChild(summary);
   return wrap;
 }
 

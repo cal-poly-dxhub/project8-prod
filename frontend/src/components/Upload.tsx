@@ -15,6 +15,7 @@ export default function Upload({ onUploadComplete }: Props) {
   const [selected, setSelected] = useState("");
   const [newCategory, setNewCategory] = useState("");
   const [age, setAge] = useState("");
+  const [heroId, setHeroId] = useState("");
 
   useEffect(() => {
     listCategories().then(setCategories).catch(() => setCategories([]));
@@ -48,16 +49,19 @@ export default function Upload({ onUploadComplete }: Props) {
         parsedAge !== undefined && Number.isFinite(parsedAge) && parsedAge >= 0
           ? parsedAge
           : undefined;
-      const { upload_url } = await createUpload(file.name, effectiveCategory, interviewAge);
+      // Hero id is an optional free-form string; the customer maintains these.
+      const hero = heroId.trim() === "" ? undefined : heroId.trim();
+      const { upload_url } = await createUpload(file.name, effectiveCategory, interviewAge, hero);
       await uploadFile(upload_url, file);
       setAge("");
+      setHeroId("");
       onUploadComplete();
     } catch (e) {
       alert(`Upload failed: ${e}`);
     } finally {
       setUploading(false);
     }
-  }, [onUploadComplete, effectiveCategory, selected, categories, age]);
+  }, [onUploadComplete, effectiveCategory, selected, categories, age, heroId]);
 
   const onDrop = (e: React.DragEvent) => {
     e.preventDefault();
@@ -129,6 +133,22 @@ export default function Upload({ onUploadComplete }: Props) {
         <p className="mt-1 text-xs text-slate-400">
           The interviewee's age at the time of this interview. Helps the model
           pick age-appropriate concepts.
+        </p>
+      </div>
+
+      <div className="mb-5 max-w-sm">
+        <Label>Hero ID <span className="font-normal text-slate-400">(optional)</span></Label>
+        <input
+          type="text"
+          placeholder="e.g. hero-042"
+          value={heroId}
+          onChange={(e) => setHeroId(e.target.value)}
+          className="w-48 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100"
+        />
+        <p className="mt-1 text-xs text-slate-400">
+          An identifier for the interviewee. Use the same hero ID across
+          interviews with the same person (at different ages) to unlock
+          over-time and comorbidity visualizations.
         </p>
       </div>
 

@@ -9,6 +9,8 @@ import {
   saturationChart,
   ageDistributionChart,
   conceptByAgeChart,
+  heroProgressionChart,
+  comorbidityChart,
   legendRow,
 } from "./charts";
 import { Alert, Card, Label, Select, Spinner } from "../ui";
@@ -83,6 +85,12 @@ export default function VizDashboard() {
   const showAge = !!model && hasConcepts && model.hasAges;
   const ageDistNode = showAge ? ageDistributionChart(model!) : null;
   const conceptByAgeNode = showAge ? conceptByAgeChart(model!) : null;
+  // Hero-level charts. Comorbidity needs any hero ids; progression needs a hero
+  // with 2+ aged interviews.
+  const hasHeroes = !!model && hasConcepts && model.heroIds.some((h) => h !== null);
+  const showHeroTimeline = !!model && hasConcepts && model.hasHeroTimeline;
+  const heroProgressionNode = showHeroTimeline ? heroProgressionChart(model!) : null;
+  const comorbidityNode = hasHeroes ? comorbidityChart(model!) : null;
 
   return (
     <div className="space-y-6">
@@ -183,6 +191,26 @@ export default function VizDashboard() {
                 subtitle="Share of interviews in each age group that mentioned each concept · top 20 concepts overall · darker = more prevalent within that age group"
               />
               <ChartMount node={conceptByAgeNode} />
+            </>
+          )}
+
+          {showHeroTimeline && (
+            <>
+              <SectionHeader
+                title="Concept Progression Over Age"
+                subtitle="For heroes interviewed at multiple ages · concepts mentioned per category at each age · one panel per hero"
+              />
+              <ChartMount node={heroProgressionNode} />
+            </>
+          )}
+
+          {hasHeroes && (
+            <>
+              <SectionHeader
+                title="Comorbidity Co-occurrence"
+                subtitle="Concept pairs that appear together within the same hero (concepts unioned across a hero's interviews) · darker = stronger comorbidity"
+              />
+              <ChartMount node={comorbidityNode} />
             </>
           )}
         </Card>
